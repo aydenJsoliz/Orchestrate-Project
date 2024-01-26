@@ -16,7 +16,7 @@ namespace Orchestrate_Project
         string noteResults;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         //int freq = 262;
-        //int dur = 800;
+        //int dur = 800; hello 
         public Form1()
         {
             InitializeComponent();
