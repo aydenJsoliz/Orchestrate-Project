@@ -16,7 +16,7 @@ namespace Orchestrate_Project
         string noteResults;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         //int freq = 262;
-        //int dur = 800; hello 
+        //int dur = 800; 
         public Form1()
         {
             InitializeComponent();
@@ -45,13 +45,6 @@ namespace Orchestrate_Project
             nf.Show();
         }
 
-
-        public void GetCheckedRadioButton()
-        {
-            string noteResults = nf.CheckedRadio();
-            radioLabel.Text = noteResults;
-        }
-
         public void GetNoteSelection(string note)
         {
             noteResults = note;
@@ -78,6 +71,10 @@ namespace Orchestrate_Project
                         "/DrawnWholeNote.png"), 55, 70);
                     this.Cursor = new Cursor(bmp3.GetHicon());
                     break;
+                case "nothingRadio":
+                    radioLabel.Text = "Selected: Nothing";
+                    this.Cursor = Cursors.Default;
+                    break;
                 default:
                     radioLabel.Text = "Selected: Nothing";
                     break;
@@ -99,11 +96,25 @@ namespace Orchestrate_Project
         private void button2_Click(object sender, EventArgs e)
         {
             player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
-                "/Orchestrate Project/Piano sounds/piano-c3.wav");
+                "/Orchestrate Project/Piano sounds/piano-c3.wav"); 
             player.Play(); 
         }
 
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+            player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
+                "/Orchestrate Project/Piano sounds/piano-c3.wav");
+            player.Play();
+        }
+
         private void button3_Click(object sender, EventArgs e)
+        {
+            player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
+                "/Orchestrate Project/Piano sounds/piano-g5.wav");
+            player.Play();
+        }
+
+        private void button3_MouseHover(object sender, EventArgs e)
         {
             player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
                 "/Orchestrate Project/Piano sounds/piano-g5.wav");

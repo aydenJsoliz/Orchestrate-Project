@@ -183,6 +183,7 @@ namespace Orchestrate_Project
             this.button2.Text = "Middle C";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseHover += new System.EventHandler(this.button2_MouseHover);
             // 
             // button3
             // 
@@ -193,6 +194,7 @@ namespace Orchestrate_Project
             this.button3.Text = "G5 note";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseHover += new System.EventHandler(this.button3_MouseHover);
             // 
             // Form1
             // 

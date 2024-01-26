@@ -50,11 +50,6 @@ namespace Orchestrate_Project
             return null;
         }
 
-        public string CheckedRadio()
-        {
-            return radioName;
-        }
-
-        
+       
     }
 }

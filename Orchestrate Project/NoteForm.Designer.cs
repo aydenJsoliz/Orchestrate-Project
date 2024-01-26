@@ -37,6 +37,7 @@ namespace Orchestrate_Project
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nothingRadio = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,7 +51,7 @@ namespace Orchestrate_Project
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(694, 120);
+            this.label1.Size = new System.Drawing.Size(669, 117);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select a rhythm note option and exit this page !\r\n\r\n\r\n";
             // 
@@ -63,7 +64,6 @@ namespace Orchestrate_Project
             this.quarterRadio.Name = "quarterRadio";
             this.quarterRadio.Size = new System.Drawing.Size(112, 21);
             this.quarterRadio.TabIndex = 1;
-            this.quarterRadio.TabStop = true;
             this.quarterRadio.Text = "Quarter Note";
             this.quarterRadio.UseVisualStyleBackColor = false;
             // 
@@ -74,7 +74,6 @@ namespace Orchestrate_Project
             this.halfRadio.Name = "halfRadio";
             this.halfRadio.Size = new System.Drawing.Size(88, 21);
             this.halfRadio.TabIndex = 3;
-            this.halfRadio.TabStop = true;
             this.halfRadio.Text = "Half Note";
             this.halfRadio.UseVisualStyleBackColor = true;
             // 
@@ -85,7 +84,6 @@ namespace Orchestrate_Project
             this.wholeRadio.Name = "wholeRadio";
             this.wholeRadio.Size = new System.Drawing.Size(103, 21);
             this.wholeRadio.TabIndex = 5;
-            this.wholeRadio.TabStop = true;
             this.wholeRadio.Text = "Whole Note";
             this.wholeRadio.UseVisualStyleBackColor = true;
             // 
@@ -121,13 +119,26 @@ namespace Orchestrate_Project
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.nothingRadio);
             this.panel1.Controls.Add(this.quarterRadio);
             this.panel1.Controls.Add(this.halfRadio);
             this.panel1.Controls.Add(this.wholeRadio);
             this.panel1.Location = new System.Drawing.Point(59, 252);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(466, 100);
+            this.panel1.Size = new System.Drawing.Size(604, 100);
             this.panel1.TabIndex = 8;
+            // 
+            // nothingRadio
+            // 
+            this.nothingRadio.AutoSize = true;
+            this.nothingRadio.Checked = true;
+            this.nothingRadio.Location = new System.Drawing.Point(457, 21);
+            this.nothingRadio.Name = "nothingRadio";
+            this.nothingRadio.Size = new System.Drawing.Size(78, 21);
+            this.nothingRadio.TabIndex = 9;
+            this.nothingRadio.TabStop = true;
+            this.nothingRadio.Text = "Nothing";
+            this.nothingRadio.UseVisualStyleBackColor = true;
             // 
             // NoteForm
             // 
@@ -162,5 +173,6 @@ namespace Orchestrate_Project
         private System.Windows.Forms.RadioButton wholeRadio;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton nothingRadio;
     }
 }
