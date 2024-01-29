@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D; 
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace Orchestrate_Project
     {
         NoteForm nf;
         string noteResults;
+        int tempo; 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         //int freq = 262;
         //int dur = 800; 
@@ -35,10 +37,7 @@ namespace Orchestrate_Project
             Application.Exit(); 
         }
 
-        private void tempoInputBox_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void notePopupButton_Click(object sender, EventArgs e)
         {
@@ -52,23 +51,20 @@ namespace Orchestrate_Project
             {
                 case "quarterRadio":
                     radioLabel.Text = "Selected: Quarter Note";
-                    Bitmap bmp1 = new Bitmap(new Bitmap("C:/Users/aydan/OneDrive/Documents" +
-                        "/Orchestrate Project/Orchestrate Project/Orchestrate Project/Resources" +
-                        "/DrawnQuarterNote2.png"), 55, 90);
+                    Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.NewDrawnQuarterNote), 100, 150);
                     this.Cursor = new Cursor(bmp1.GetHicon());
                     break;
                 case "halfRadio":
                     radioLabel.Text = "Selected: Half Note";
-                    Bitmap bmp2 = new Bitmap(new Bitmap("C:/Users/aydan/OneDrive/Documents" +
-                        "/Orchestrate Project/Orchestrate Project/Orchestrate Project/Resources" +
-                        "/DrawnHalfNote.png"), 55, 90);
+                    Bitmap bmp2 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.NewDrawnHalfNote), 400, 200);
                     this.Cursor = new Cursor(bmp2.GetHicon());
                     break;
                 case "wholeRadio":
                     radioLabel.Text = "Selected: Whole Note";
-                    Bitmap bmp3 = new Bitmap(new Bitmap("C:/Users/aydan/OneDrive/Documents" +
-                        "/Orchestrate Project/Orchestrate Project/Orchestrate Project/Resources" +
-                        "/DrawnWholeNote.png"), 55, 70);
+                    Bitmap bmp3 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.DrawnWholeNote), 55, 80);
                     this.Cursor = new Cursor(bmp3.GetHicon());
                     break;
                 case "nothingRadio":
@@ -89,6 +85,7 @@ namespace Orchestrate_Project
 
         private void helpButton_Click(object sender, EventArgs e)
         {
+            // creates and opens an instance of HelpForm
             HelpForm hf = new HelpForm();
             hf.Show();
         }
@@ -119,6 +116,42 @@ namespace Orchestrate_Project
             player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
                 "/Orchestrate Project/Piano sounds/piano-g5.wav");
             player.Play();
+        }
+
+        private void tempoInputBox_TextChanged_1(object sender, EventArgs e)
+        {
+            int validate = 0;
+            Int32.TryParse(tempoInputBox.Text, out validate); // validates to make sure there is a value to parse
+
+            if (Int32.TryParse(tempoInputBox.Text, out validate))
+            {
+                tempo = Int32.Parse(tempoInputBox.Text);
+            }
+            else
+            {
+                tempo = 60;
+            }
+
+        }
+
+        private void tempoInputBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // only allows integers
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tempoInputBox_Leave(object sender, EventArgs e)
+        {
+            // displays the current value of tempo 
+            if (tempo != 60)
+            {
+                tempoInputBox.Text = tempo.ToString();
+            }
+            else
+                tempoInputBox.Text = "60";
         }
     }
 }

@@ -125,5 +125,11 @@
   <ItemGroup>
     <None Include="Resources\DrawnWholeNote.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewDrawnQuarterNote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewDrawnHalfNote.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

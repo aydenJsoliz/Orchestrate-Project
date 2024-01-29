@@ -123,6 +123,26 @@ namespace Orchestrate_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NewDrawnHalfNote {
+            get {
+                object obj = ResourceManager.GetObject("NewDrawnHalfNote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NewDrawnQuarterNote {
+            get {
+                object obj = ResourceManager.GetObject("NewDrawnQuarterNote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PlayButtonPic {
             get {
                 object obj = ResourceManager.GetObject("PlayButtonPic", resourceCulture);

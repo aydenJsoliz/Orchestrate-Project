@@ -62,9 +62,9 @@ namespace Orchestrate_Project
             // titleLabel1
             // 
             this.titleLabel1.AutoSize = true;
-            this.titleLabel1.BackColor = System.Drawing.Color.White;
+            this.titleLabel1.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel1.Font = new System.Drawing.Font("Bodoni MT", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel1.Location = new System.Drawing.Point(378, 12);
+            this.titleLabel1.Location = new System.Drawing.Point(355, 9);
             this.titleLabel1.Name = "titleLabel1";
             this.titleLabel1.Size = new System.Drawing.Size(315, 68);
             this.titleLabel1.TabIndex = 3;
@@ -87,19 +87,21 @@ namespace Orchestrate_Project
             this.tempoInputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tempoInputBox.Font = new System.Drawing.Font("Bodoni MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tempoInputBox.Location = new System.Drawing.Point(76, 120);
-            this.tempoInputBox.Multiline = true;
             this.tempoInputBox.Name = "tempoInputBox";
-            this.tempoInputBox.Size = new System.Drawing.Size(55, 39);
+            this.tempoInputBox.Size = new System.Drawing.Size(55, 35);
             this.tempoInputBox.TabIndex = 5;
             this.tempoInputBox.TabStop = false;
+            this.tempoInputBox.Text = "60";
             this.tempoInputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tempoInputBox.TextChanged += new System.EventHandler(this.tempoInputBox_TextChanged_1);
+            this.tempoInputBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tempoInputBox_KeyPress);
+            this.tempoInputBox.Leave += new System.EventHandler(this.tempoInputBox_Leave);
             // 
             // recordButton
             // 
             this.recordButton.BackgroundImage = global::Orchestrate_Project.Properties.Resources.RecordButton;
             this.recordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.recordButton.Location = new System.Drawing.Point(773, 111);
+            this.recordButton.Location = new System.Drawing.Point(831, 111);
             this.recordButton.Name = "recordButton";
             this.recordButton.Size = new System.Drawing.Size(63, 60);
             this.recordButton.TabIndex = 8;
@@ -111,7 +113,7 @@ namespace Orchestrate_Project
             this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.playButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
             this.playButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.playButton.Location = new System.Drawing.Point(687, 111);
+            this.playButton.Location = new System.Drawing.Point(737, 111);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(69, 60);
             this.playButton.TabIndex = 7;
