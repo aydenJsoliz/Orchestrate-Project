@@ -17,12 +17,11 @@ namespace Orchestrate_Project
         string noteResults;
         int tempo; 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-        //int freq = 262;
-        //int dur = 800; 
+
         public Form1()
         {
             InitializeComponent();
-            nf = new NoteForm(); //this
+           // nf = new NoteForm(); //this
         }
 
         private void printButton_Click(object sender, EventArgs e)
@@ -33,7 +32,7 @@ namespace Orchestrate_Project
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            nf.Close();
+           // nf.Close();
             Application.Exit(); 
         }
 
@@ -41,6 +40,7 @@ namespace Orchestrate_Project
 
         private void notePopupButton_Click(object sender, EventArgs e)
         {
+            NoteForm nf = new NoteForm();
             nf.Show();
         }
 
@@ -118,6 +118,7 @@ namespace Orchestrate_Project
             player.Play();
         }
 
+        // Functions for Tempo Input Box ---------------------------------------------------------
         private void tempoInputBox_TextChanged_1(object sender, EventArgs e)
         {
             int validate = 0;
@@ -153,5 +154,7 @@ namespace Orchestrate_Project
             else
                 tempoInputBox.Text = "60";
         }
+
+        // --------------------------------------------------------------------------------------
     }
 }

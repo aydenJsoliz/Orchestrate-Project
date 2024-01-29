@@ -20,8 +20,6 @@ namespace Orchestrate_Project
             InitializeComponent(); 
 
             this.FormClosing += new FormClosingEventHandler(NoteForm_FormClosing);
-           // form1 = nform1;
-           // form1.Hide();  
 
         }
         private void NoteForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -30,8 +28,8 @@ namespace Orchestrate_Project
 
             GetCheckedRadio(panel1);
             
-            e.Cancel = true;
-            this.Hide();
+           // e.Cancel = true;
+           // this.Hide();
         }
 
         public RadioButton GetCheckedRadio(Control container)
