@@ -49,7 +49,8 @@ namespace Orchestrate_Project
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Name = "HelpForm";
-            this.Text = "HelpForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Help Page";
             this.ResumeLayout(false);
             this.PerformLayout();
 

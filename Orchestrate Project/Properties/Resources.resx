@@ -124,11 +124,14 @@
   <data name="PlayButtonPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlayButtonPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DrawnQuarterNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrawnQuarterNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RecordButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RecordButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EigthNotePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EigthNotePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NewDrawnHalfNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewDrawnHalfNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DrawnQuarterNote2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DrawnQuarterNote2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,13 +145,10 @@
   <data name="DrawnQuarterNote1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DrawnQuarterNote1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DrawnQuarterNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DrawnQuarterNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EigthNotePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EigthNotePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PrinterPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PrinterPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NewDrawnHalfNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewDrawnHalfNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -147,7 +147,7 @@ namespace Orchestrate_Project
         private void tempoInputBox_Leave(object sender, EventArgs e)
         {
             // displays the current value of tempo 
-            if (tempo != 60)
+            if (tempo != 60 && tempo <= 120 && tempo >= 60)
             {
                 tempoInputBox.Text = tempo.ToString();
             }
