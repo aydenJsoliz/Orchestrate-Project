@@ -15,8 +15,11 @@ namespace Orchestrate_Project
     {
         NoteForm nf;
         string noteResults;
-        int tempo; 
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+        int tempo;
+        int staffHght = 15;
+        //int countForDrawing = 0;
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(); 
+
 
         public Form1()
         {
@@ -36,8 +39,6 @@ namespace Orchestrate_Project
             Application.Exit(); 
         }
 
-        
-
         private void notePopupButton_Click(object sender, EventArgs e)
         {
             NoteForm nf = new NoteForm();
@@ -51,25 +52,25 @@ namespace Orchestrate_Project
             {
                 case "quarterRadio":
                     radioLabel.Text = "Selected: Quarter Note";
-                    Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                        Resources.NewDrawnQuarterNote), 100, 150);
-                    this.Cursor = new Cursor(bmp1.GetHicon());
+                    //Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                    //    Resources.NewDrawnQuarterNote), 100, 150);
+                    //this.Cursor = new Cursor(bmp1.GetHicon());
                     break;
                 case "halfRadio":
                     radioLabel.Text = "Selected: Half Note";
-                    Bitmap bmp2 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                        Resources.NewDrawnHalfNote), 400, 200);
-                    this.Cursor = new Cursor(bmp2.GetHicon());
+                    //Bitmap bmp2 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                    //    Resources.NewDrawnHalfNote), 400, 200);
+                    //this.Cursor = new Cursor(bmp2.GetHicon());
                     break;
                 case "wholeRadio":
                     radioLabel.Text = "Selected: Whole Note";
-                    Bitmap bmp3 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                        Resources.DrawnWholeNote), 55, 80);
-                    this.Cursor = new Cursor(bmp3.GetHicon());
+                    //Bitmap bmp3 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                    //    Resources.DrawnWholeNote), 55, 80);
+                    //this.Cursor = new Cursor(bmp3.GetHicon());
                     break;
                 case "nothingRadio":
                     radioLabel.Text = "Selected: Nothing";
-                    this.Cursor = Cursors.Default;
+                    //this.Cursor = Cursors.Default;
                     break;
                 default:
                     radioLabel.Text = "Selected: Nothing";
@@ -90,6 +91,7 @@ namespace Orchestrate_Project
             hf.Show();
         }
 
+        // Playing with audio files ----------------------------------------------------------------
         private void button2_Click(object sender, EventArgs e)
         {
             player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
@@ -117,6 +119,7 @@ namespace Orchestrate_Project
                 "/Orchestrate Project/Piano sounds/piano-g5.wav");
             player.Play();
         }
+        // ---------------------------------------------------------------------------------------
 
         // Functions for Tempo Input Box ---------------------------------------------------------
         private void tempoInputBox_TextChanged_1(object sender, EventArgs e)
@@ -154,7 +157,63 @@ namespace Orchestrate_Project
             else
                 tempoInputBox.Text = "60";
         }
-
         // --------------------------------------------------------------------------------------
+
+        private void musicalStaffPanel_Paint(object sender, PaintEventArgs e)
+        { 
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.HighQuality;
+
+
+            for (int i = 1; i < 6; i++)
+                 g.DrawLine(Pens.Black, 0, i * staffHght, musicalStaffPanel.Width - 45, i * staffHght);
+
+               
+        }
+
+        private void newMusicLineButton_Click(object sender, EventArgs e)
+        {
+            
+            //musicalStaffPanel_Paint();
+            // musicalStaffPanel_Paint();  there should be more added to the Paint function, maybe if statement
+            //int lines;
+            //Graphics gr = e.Graphics;
+            //gr.SmoothingMode = SmoothingMode.HighQuality;
+
+            //lines = 0;
+            //while (lines < 6)
+            //{
+            //    gr.DrawLine(Pens.Black, 0, 9 * staffHght, musicalStaffPanel.Width - 45, 9 * staffHght);
+            //}
+        }
+
+        private void musicalStaffPanel_MouseHover(object sender, EventArgs e)
+        {
+            switch(noteResults)
+            {
+                case "quarterRadio":
+                    Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.NewDrawnQuarterNote), 100, 150);
+                    this.Cursor = new Cursor(bmp1.GetHicon());
+                    break;
+                case "halfRadio":
+                    Bitmap bmp2 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.NewDrawnHalfNote), 370, 180);
+                    this.Cursor = new Cursor(bmp2.GetHicon());
+                    break;
+                case "wholeRadio":
+                    Bitmap bmp3 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.DrawnWholeNote), 55, 80);
+                    this.Cursor = new Cursor(bmp3.GetHicon());
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void musicalStaffPanel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
     }
 }
