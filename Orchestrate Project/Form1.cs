@@ -13,18 +13,16 @@ namespace Orchestrate_Project
 {
     public partial class Form1 : Form
     {
-        NoteForm nf;
         string noteResults;
         int tempo;
         int staffHght = 15;
-        //int countForDrawing = 0;
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(); 
-
+        int countForDrawing = 6;
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
         public Form1()
         {
             InitializeComponent();
-           // nf = new NoteForm(); //this
+            // nf = new NoteForm(); //this
         }
 
         private void printButton_Click(object sender, EventArgs e)
@@ -35,8 +33,7 @@ namespace Orchestrate_Project
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-           // nf.Close();
-            Application.Exit(); 
+            Application.Exit();
         }
 
         private void notePopupButton_Click(object sender, EventArgs e)
@@ -48,7 +45,7 @@ namespace Orchestrate_Project
         public void GetNoteSelection(string note)
         {
             noteResults = note;
-            switch(noteResults)
+            switch (noteResults)
             {
                 case "quarterRadio":
                     radioLabel.Text = "Selected: Quarter Note";
@@ -75,7 +72,7 @@ namespace Orchestrate_Project
                 default:
                     radioLabel.Text = "Selected: Nothing";
                     break;
-                  
+
             }
         }
 
@@ -95,8 +92,8 @@ namespace Orchestrate_Project
         private void button2_Click(object sender, EventArgs e)
         {
             player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
-                "/Orchestrate Project/Piano sounds/piano-c3.wav"); 
-            player.Play(); 
+                "/Orchestrate Project/Piano sounds/piano-c3.wav");
+            player.Play();
         }
 
         private void button2_MouseHover(object sender, EventArgs e)
@@ -160,36 +157,53 @@ namespace Orchestrate_Project
         // --------------------------------------------------------------------------------------
 
         private void musicalStaffPanel_Paint(object sender, PaintEventArgs e)
-        { 
+        {
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.HighQuality;
 
 
             for (int i = 1; i < 6; i++)
-                 g.DrawLine(Pens.Black, 0, i * staffHght, musicalStaffPanel.Width - 45, i * staffHght);
+                g.DrawLine(Pens.Black, 0, i * staffHght, musicalStaffPanel.Width - 45, i * staffHght);
 
-               
+            g.DrawLine(Pens.Black, (musicalStaffPanel.Width / 3) + 30, 15, (musicalStaffPanel.Width / 3) + 30, 75);
+            g.DrawLine(Pens.Black, (musicalStaffPanel.Width / 2) + 150, 15, (musicalStaffPanel.Width / 2) + 150, 75);
+            g.DrawLine(Pens.Black, musicalStaffPanel.Width - 45, 15, musicalStaffPanel.Width - 45, 75);
+
+
+            g.Dispose(); // dispose graphics object for storage
+        }
+
+        private void DrawLines()
+        {
+            Graphics gr = musicalStaffPanel.CreateGraphics();
+            gr.SmoothingMode = SmoothingMode.HighQuality;
+            int i; // index for for loop
+
+            for (i = countForDrawing; i < countForDrawing + 5; i++)
+            {
+                gr.DrawLine(Pens.Black, 0, i * staffHght, musicalStaffPanel.Width - 45, i * staffHght);
+            }
+
+            gr.DrawLine(Pens.Black, (musicalStaffPanel.Width / 3) + 30, (i * staffHght) - 15,
+                (musicalStaffPanel.Width / 3) + 30, (i * staffHght) - 75);
+            gr.DrawLine(Pens.Black, (musicalStaffPanel.Width / 2) + 150, (i * staffHght) - 15,
+                (musicalStaffPanel.Width / 2) + 150, (i * staffHght) - 75);
+            gr.DrawLine(Pens.Black, musicalStaffPanel.Width - 45, (i * staffHght) - 15,
+                musicalStaffPanel.Width - 45, (i * staffHght) - 75);
+
+            countForDrawing = i;
+            gr.Dispose(); // disposes graphics object for storage
         }
 
         private void newMusicLineButton_Click(object sender, EventArgs e)
         {
-            
-            //musicalStaffPanel_Paint();
-            // musicalStaffPanel_Paint();  there should be more added to the Paint function, maybe if statement
-            //int lines;
-            //Graphics gr = e.Graphics;
-            //gr.SmoothingMode = SmoothingMode.HighQuality;
-
-            //lines = 0;
-            //while (lines < 6)
-            //{
-            //    gr.DrawLine(Pens.Black, 0, 9 * staffHght, musicalStaffPanel.Width - 45, 9 * staffHght);
-            //}
+            countForDrawing = countForDrawing + 3; 
+            DrawLines(); 
         }
 
         private void musicalStaffPanel_MouseHover(object sender, EventArgs e)
         {
-            switch(noteResults)
+            switch (noteResults)
             {
                 case "quarterRadio":
                     Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
@@ -215,5 +229,6 @@ namespace Orchestrate_Project
         {
             this.Cursor = Cursors.Default;
         }
+
     }
 }

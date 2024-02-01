@@ -70,7 +70,7 @@ namespace Orchestrate_Project
             this.titleLabel1.AutoSize = true;
             this.titleLabel1.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel1.Font = new System.Drawing.Font("Bodoni MT", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel1.Location = new System.Drawing.Point(355, 9);
+            this.titleLabel1.Location = new System.Drawing.Point(387, 9);
             this.titleLabel1.Name = "titleLabel1";
             this.titleLabel1.Size = new System.Drawing.Size(315, 68);
             this.titleLabel1.TabIndex = 3;
@@ -198,7 +198,7 @@ namespace Orchestrate_Project
             this.trebleAndTime.Image = global::Orchestrate_Project.Properties.Resources.Treble_Time;
             this.trebleAndTime.Location = new System.Drawing.Point(-44, -29);
             this.trebleAndTime.Name = "trebleAndTime";
-            this.trebleAndTime.Size = new System.Drawing.Size(249, 183);
+            this.trebleAndTime.Size = new System.Drawing.Size(245, 183);
             this.trebleAndTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.trebleAndTime.TabIndex = 0;
             this.trebleAndTime.TabStop = false;
