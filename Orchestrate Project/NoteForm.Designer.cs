@@ -150,6 +150,7 @@ namespace Orchestrate_Project
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
+            this.MaximizeBox = false;
             this.Name = "NoteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Note Selection";

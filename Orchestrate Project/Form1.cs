@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D; 
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace Orchestrate_Project
@@ -15,7 +9,7 @@ namespace Orchestrate_Project
     {
         string noteResults;
         int tempo;
-        int staffHght = 15;
+        int staffHght = 12;
         int countForDrawing = 6;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
@@ -49,25 +43,15 @@ namespace Orchestrate_Project
             {
                 case "quarterRadio":
                     radioLabel.Text = "Selected: Quarter Note";
-                    //Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                    //    Resources.NewDrawnQuarterNote), 100, 150);
-                    //this.Cursor = new Cursor(bmp1.GetHicon());
                     break;
                 case "halfRadio":
                     radioLabel.Text = "Selected: Half Note";
-                    //Bitmap bmp2 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                    //    Resources.NewDrawnHalfNote), 400, 200);
-                    //this.Cursor = new Cursor(bmp2.GetHicon());
                     break;
                 case "wholeRadio":
                     radioLabel.Text = "Selected: Whole Note";
-                    //Bitmap bmp3 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                    //    Resources.DrawnWholeNote), 55, 80);
-                    //this.Cursor = new Cursor(bmp3.GetHicon());
                     break;
                 case "nothingRadio":
                     radioLabel.Text = "Selected: Nothing";
-                    //this.Cursor = Cursors.Default;
                     break;
                 default:
                     radioLabel.Text = "Selected: Nothing";
@@ -135,9 +119,8 @@ namespace Orchestrate_Project
 
         }
 
-        private void tempoInputBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void tempoInputBox_KeyPress(object sender, KeyPressEventArgs e)     // only allows integers
         {
-            // only allows integers
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -156,8 +139,10 @@ namespace Orchestrate_Project
         }
         // --------------------------------------------------------------------------------------
 
+        // Functions for Musical Staff Panel ----------------------------------------------------
         private void musicalStaffPanel_Paint(object sender, PaintEventArgs e)
         {
+
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -165,13 +150,14 @@ namespace Orchestrate_Project
             for (int i = 1; i < 6; i++)
                 g.DrawLine(Pens.Black, 0, i * staffHght, musicalStaffPanel.Width - 45, i * staffHght);
 
-            g.DrawLine(Pens.Black, (musicalStaffPanel.Width / 3) + 30, 15, (musicalStaffPanel.Width / 3) + 30, 75);
-            g.DrawLine(Pens.Black, (musicalStaffPanel.Width / 2) + 150, 15, (musicalStaffPanel.Width / 2) + 150, 75);
-            g.DrawLine(Pens.Black, musicalStaffPanel.Width - 45, 15, musicalStaffPanel.Width - 45, 75);
+            g.DrawLine(Pens.Black, (musicalStaffPanel.Width / 3) + 30, 12, (musicalStaffPanel.Width / 3) + 30, 60);
+            g.DrawLine(Pens.Black, (musicalStaffPanel.Width / 2) + 150, 12, (musicalStaffPanel.Width / 2) + 150, 60);
+            g.DrawLine(Pens.Black, musicalStaffPanel.Width - 45, 12, musicalStaffPanel.Width - 45, 60);
 
 
             g.Dispose(); // dispose graphics object for storage
         }
+
 
         private void DrawLines()
         {
@@ -183,13 +169,13 @@ namespace Orchestrate_Project
             {
                 gr.DrawLine(Pens.Black, 0, i * staffHght, musicalStaffPanel.Width - 45, i * staffHght);
             }
-
-            gr.DrawLine(Pens.Black, (musicalStaffPanel.Width / 3) + 30, (i * staffHght) - 15,
-                (musicalStaffPanel.Width / 3) + 30, (i * staffHght) - 75);
-            gr.DrawLine(Pens.Black, (musicalStaffPanel.Width / 2) + 150, (i * staffHght) - 15,
-                (musicalStaffPanel.Width / 2) + 150, (i * staffHght) - 75);
-            gr.DrawLine(Pens.Black, musicalStaffPanel.Width - 45, (i * staffHght) - 15,
-                musicalStaffPanel.Width - 45, (i * staffHght) - 75);
+            gr.DrawLine(Pens.Black, 0, (i * staffHght) - 12, 0, (i * staffHght) - 60);
+            gr.DrawLine(Pens.Black, (musicalStaffPanel.Width / 3) + 30, (i * staffHght) - 12,
+                (musicalStaffPanel.Width / 3) + 30, (i * staffHght) - 60);
+            gr.DrawLine(Pens.Black, (musicalStaffPanel.Width / 2) + 150, (i * staffHght) - 12,
+                (musicalStaffPanel.Width / 2) + 150, (i * staffHght) - 60);
+            gr.DrawLine(Pens.Black, musicalStaffPanel.Width - 45, (i * staffHght) - 12,
+                musicalStaffPanel.Width - 45, (i * staffHght) - 60);
 
             countForDrawing = i;
             gr.Dispose(); // disposes graphics object for storage
@@ -197,32 +183,32 @@ namespace Orchestrate_Project
 
         private void newMusicLineButton_Click(object sender, EventArgs e)
         {
-            countForDrawing = countForDrawing + 3; 
-            DrawLines(); 
+            countForDrawing = countForDrawing + 3;
+            DrawLines();
         }
 
         private void musicalStaffPanel_MouseHover(object sender, EventArgs e)
         {
-            switch (noteResults)
-            {
-                case "quarterRadio":
-                    Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                        Resources.NewDrawnQuarterNote), 100, 150);
-                    this.Cursor = new Cursor(bmp1.GetHicon());
-                    break;
-                case "halfRadio":
-                    Bitmap bmp2 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                        Resources.NewDrawnHalfNote), 370, 180);
-                    this.Cursor = new Cursor(bmp2.GetHicon());
-                    break;
-                case "wholeRadio":
-                    Bitmap bmp3 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                        Resources.DrawnWholeNote), 55, 80);
-                    this.Cursor = new Cursor(bmp3.GetHicon());
-                    break;
-                default:
-                    break;
-            }
+            //switch (noteResults)
+            //{
+            //    case "quarterRadio":
+            //        Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+            //            Resources.NewDrawnQuarterNote), 100, 150);
+            //        this.Cursor = new Cursor(bmp1.GetHicon());
+            //        break;
+            //    case "halfRadio":
+            //        Bitmap bmp2 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+            //            Resources.NewDrawnHalfNote), 370, 180);
+            //        this.Cursor = new Cursor(bmp2.GetHicon());
+            //        break;
+            //    case "wholeRadio":
+            //        Bitmap bmp3 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+            //            Resources.DrawnWholeNote), 55, 80);
+            //        this.Cursor = new Cursor(bmp3.GetHicon());
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
 
         private void musicalStaffPanel_MouseLeave(object sender, EventArgs e)
@@ -230,5 +216,50 @@ namespace Orchestrate_Project
             this.Cursor = Cursors.Default;
         }
 
+        private void musicalStaffPanel_Click(object sender, EventArgs e)
+        {
+            DrawNotes();
+        }
+
+        private void DrawNotes()
+        {
+            Graphics mgr = musicalStaffPanel.CreateGraphics();
+            mgr.SmoothingMode = SmoothingMode.HighQuality;
+
+            var mouseCoord = musicalStaffPanel.PointToClient(Cursor.Position);
+
+            switch (noteResults)
+            {
+                case "quarterRadio":
+                    Bitmap quarterNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                            Resources.NewDrawnQuarterNote), 60, 110);
+                    mouseCoord.X = mouseCoord.X - 35;
+                    mouseCoord.Y = mouseCoord.Y - 60;
+                    mgr.DrawImage(quarterNote, mouseCoord);
+                    break;
+                case "halfRadio":
+                    Bitmap halfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.NewDrawnHalfNote), 320, 130);
+                    mouseCoord.X = mouseCoord.X - 162;
+                    mouseCoord.Y = mouseCoord.Y - 75;
+                    mgr.DrawImage(halfNote, mouseCoord);
+                    break;
+                case "wholeRadio":
+                    Bitmap wholeNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.DrawnWholeNote), 45, 70);
+                    mouseCoord.X = mouseCoord.X - 25;
+                    mouseCoord.Y = mouseCoord.Y - 38;
+                    mgr.DrawImage(wholeNote, mouseCoord);
+                    break;
+                default:
+                    System.Windows.Forms.MessageBox.Show("ERROR !! \nNote not selected !!");
+                    break;
+
+            }
+
+
+            mgr.Dispose();   // dispose graphics object for storage
+        }
+        // -------------------------------------------------------------------------------------
     }
 }
