@@ -189,7 +189,6 @@ namespace Orchestrate_Project
 
         private void musicalStaffPanel_MouseHover(object sender, EventArgs e)
         {
-            //switch (noteResults)
             //{
             //    case "quarterRadio":
             //        Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
@@ -228,6 +227,13 @@ namespace Orchestrate_Project
 
             var mouseCoord = musicalStaffPanel.PointToClient(Cursor.Position);
 
+            if (mouseCoord.Y > 46 && mouseCoord.Y < 52)
+            {
+                player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
+                    "/Orchestrate Project/Piano sounds/piano-g5.wav");
+                player.Play();
+            }
+
             switch (noteResults)
             {
                 case "quarterRadio":
@@ -239,9 +245,9 @@ namespace Orchestrate_Project
                     break;
                 case "halfRadio":
                     Bitmap halfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-                        Resources.NewDrawnHalfNote), 320, 130);
-                    mouseCoord.X = mouseCoord.X - 162;
-                    mouseCoord.Y = mouseCoord.Y - 75;
+                        Resources.NewDrawnHalfNote), 250, 120);
+                    mouseCoord.X = mouseCoord.X - 126;
+                    mouseCoord.Y = mouseCoord.Y - 70;
                     mgr.DrawImage(halfNote, mouseCoord);
                     break;
                 case "wholeRadio":
