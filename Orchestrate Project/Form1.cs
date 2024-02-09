@@ -7,10 +7,12 @@ namespace Orchestrate_Project
 {
     public partial class Form1 : Form
     {
-        string noteResults;
-        int tempo;
-        int staffHght = 12;
-        int countForDrawing = 6;
+        string noteResults;             // holds the note chosen from NoteForm
+        int tempo;                      // tempo for playing notes
+        int staffHght = 12;             // the distance from staff line to staff line
+        int countForDrawing = 6;        // counter for drawing staff
+        int disableButtonCounter = 0;   // counter for disabling new staff button
+
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
         public Form1()
@@ -178,7 +180,15 @@ namespace Orchestrate_Project
                 musicalStaffPanel.Width - 45, (i * staffHght) - 60);
 
             countForDrawing = i;
+            disableButtonCounter++;
             gr.Dispose(); // disposes graphics object for storage
+
+            if (disableButtonCounter == 4)
+            {
+                newMusicLineButton.BackColor = Color.LightGray;
+                newMusicLineButton.ForeColor = Color.Gray;
+                newMusicLineButton.Enabled = false;
+            }
         }
 
         private void newMusicLineButton_Click(object sender, EventArgs e)
