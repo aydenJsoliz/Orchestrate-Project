@@ -29,6 +29,7 @@ namespace Orchestrate_Project
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.exitButton = new System.Windows.Forms.Button();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.tempoLabel = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@ namespace Orchestrate_Project
             this.playButton = new System.Windows.Forms.Button();
             this.notePopupButton = new System.Windows.Forms.Button();
             this.printButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.musicalStaffPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).BeginInit();
             this.SuspendLayout();
@@ -111,6 +113,7 @@ namespace Orchestrate_Project
             this.helpButton.Size = new System.Drawing.Size(40, 55);
             this.helpButton.TabIndex = 9;
             this.helpButton.Text = "?";
+            this.toolTip1.SetToolTip(this.helpButton, "Help");
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
@@ -174,6 +177,7 @@ namespace Orchestrate_Project
             this.newMusicLineButton.Size = new System.Drawing.Size(40, 65);
             this.newMusicLineButton.TabIndex = 1;
             this.newMusicLineButton.Text = "+";
+            this.toolTip1.SetToolTip(this.newMusicLineButton, "Draw new staff lines");
             this.newMusicLineButton.UseVisualStyleBackColor = false;
             this.newMusicLineButton.Click += new System.EventHandler(this.newMusicLineButton_Click);
             // 
@@ -212,6 +216,7 @@ namespace Orchestrate_Project
             this.recordButton.Name = "recordButton";
             this.recordButton.Size = new System.Drawing.Size(63, 60);
             this.recordButton.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.recordButton, "Record");
             this.recordButton.UseVisualStyleBackColor = true;
             // 
             // playButton
@@ -225,6 +230,7 @@ namespace Orchestrate_Project
             this.playButton.Size = new System.Drawing.Size(69, 60);
             this.playButton.TabIndex = 7;
             this.playButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.playButton, "Play");
             this.playButton.UseVisualStyleBackColor = false;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
@@ -236,6 +242,7 @@ namespace Orchestrate_Project
             this.notePopupButton.Name = "notePopupButton";
             this.notePopupButton.Size = new System.Drawing.Size(59, 60);
             this.notePopupButton.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.notePopupButton, "Note Selection");
             this.notePopupButton.UseVisualStyleBackColor = true;
             this.notePopupButton.Click += new System.EventHandler(this.notePopupButton_Click);
             // 
@@ -249,6 +256,7 @@ namespace Orchestrate_Project
             this.printButton.Name = "printButton";
             this.printButton.Size = new System.Drawing.Size(56, 50);
             this.printButton.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.printButton, "Print Screen");
             this.printButton.UseVisualStyleBackColor = false;
             this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
@@ -304,6 +312,7 @@ namespace Orchestrate_Project
         private System.Windows.Forms.Panel musicalStaffPanel;
         private System.Windows.Forms.PictureBox trebleAndTime;
         private System.Windows.Forms.Button newMusicLineButton;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
