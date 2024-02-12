@@ -200,6 +200,7 @@ namespace Orchestrate_Project
             // trebleAndTime
             // 
             this.trebleAndTime.BackColor = System.Drawing.Color.Transparent;
+            this.trebleAndTime.Cursor = System.Windows.Forms.Cursors.No;
             this.trebleAndTime.Image = global::Orchestrate_Project.Properties.Resources.Treble_Time;
             this.trebleAndTime.Location = new System.Drawing.Point(-34, -12);
             this.trebleAndTime.Name = "trebleAndTime";
