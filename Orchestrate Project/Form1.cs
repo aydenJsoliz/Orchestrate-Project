@@ -2,16 +2,19 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Orchestrate_Project
 {
     public partial class Form1 : Form
     {
-        string noteResults;             // holds the note chosen from NoteForm
-        int tempo;                      // tempo for playing notes
-        int staffHght = 12;             // the distance from staff line to staff line
-        int countForDrawing = 6;        // counter for drawing staff
-        int disableButtonCounter = 0;   // counter for disabling new staff button
+        string rhythmResults;                   // holds the rhythm chosen from NoteForm
+        int tempo;                              // tempo for playing notes
+        int staffHght = 12;                     // the distance from staff line to staff line
+        int countForDrawing = 6;                // counter for drawing staff
+        int disableButtonCounter = 0;           // counter for disabling new staff button
+        string[] noteArray = new string[75];    // array to hold the notes to be played
+        int counterNoteArray = 0;               // counter to update note array properly   
 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
@@ -38,10 +41,10 @@ namespace Orchestrate_Project
             nf.Show();
         }
 
-        public void GetNoteSelection(string note)
+        public void GetNoteSelection(string rhythm)
         {
-            noteResults = note;
-            switch (noteResults)
+            rhythmResults = rhythm;
+            switch (rhythmResults)
             {
                 case "quarterRadio":
                     radioLabel.Text = "Selected: Quarter Note";
@@ -60,11 +63,6 @@ namespace Orchestrate_Project
                     break;
 
             }
-        }
-
-        private void playButton_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void helpButton_Click(object sender, EventArgs e)
@@ -237,14 +235,16 @@ namespace Orchestrate_Project
 
             var mouseCoord = musicalStaffPanel.PointToClient(Cursor.Position);
 
-            if (mouseCoord.Y > 46 && mouseCoord.Y < 52)
+            if (mouseCoord.Y > 46 && mouseCoord.Y < 52 && rhythmResults != null)
             {
                 player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
                     "/Orchestrate Project/Piano sounds/piano-g5.wav");
                 player.Play();
+
+                noteArray[counterNoteArray] = "G";
             }
 
-            switch (noteResults)
+            switch (rhythmResults)
             {
                 case "quarterRadio":
                     Bitmap quarterNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
@@ -273,9 +273,41 @@ namespace Orchestrate_Project
 
             }
 
-
+            counterNoteArray++;
             mgr.Dispose();   // dispose graphics object for storage
         }
         // -------------------------------------------------------------------------------------
+
+        // Functions for Playing notes ---------------------------------------------------------
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            if(noteArray[i] == null)
+            {
+                System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
+                    "not been placed yet !!");
+            }
+            else
+            {
+                do
+                {
+                    switch(noteArray[i])
+                    {
+                        case "G":
+                            player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
+                            "/Orchestrate Project/Piano sounds/piano-g5.wav");
+                            player.Play();
+                            break;
+                        default:
+                            break;
+
+                    }
+                    Thread.Sleep(1000);
+                    i++;
+                }
+                while (noteArray[i] != null);
+            }
+        }
+        
     }
 }
