@@ -235,7 +235,9 @@ namespace Orchestrate_Project
 
             var mouseCoord = musicalStaffPanel.PointToClient(Cursor.Position);
 
-            if (mouseCoord.Y > 46 && mouseCoord.Y < 52 && rhythmResults != null)
+            if ((mouseCoord.Y > 44 && mouseCoord.Y < 52) || (mouseCoord.Y > 140 && mouseCoord.Y < 148)
+                || (mouseCoord.Y > 236 && mouseCoord.Y < 244) || (mouseCoord.Y > 332 && mouseCoord.Y < 340) 
+                || (mouseCoord.Y > 428 && mouseCoord.Y < 436) && rhythmResults != null)
             {
                 player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
                     "/Orchestrate Project/Piano sounds/piano-g5.wav");
@@ -243,6 +245,9 @@ namespace Orchestrate_Project
 
                 noteArray[counterNoteArray] = "G";
             }
+
+
+
 
             switch (rhythmResults)
             {
