@@ -9,7 +9,7 @@ namespace Orchestrate_Project
     public partial class Form1 : Form
     {
         string rhythmResults;                   // holds the rhythm chosen from NoteForm
-        int tempo;                              // tempo for playing notes
+        int tempo = 60;                         // tempo for playing notes
         int staffHght = 12;                     // the distance from staff line to staff line
         int countForDrawing = 6;                // counter for drawing staff
         int disableButtonCounter = 0;           // counter for disabling new staff button
@@ -72,35 +72,6 @@ namespace Orchestrate_Project
             hf.Show();
         }
 
-        // Playing with audio files ----------------------------------------------------------------
-        private void button2_Click(object sender, EventArgs e)
-        {
-            player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
-                "/Orchestrate Project/Piano sounds/piano-c3.wav");
-            player.Play();
-        }
-
-        private void button2_MouseHover(object sender, EventArgs e)
-        {
-            player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
-                "/Orchestrate Project/Piano sounds/piano-c3.wav");
-            player.Play();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
-                "/Orchestrate Project/Piano sounds/piano-g5.wav");
-            player.Play();
-        }
-
-        private void button3_MouseHover(object sender, EventArgs e)
-        {
-            player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
-                "/Orchestrate Project/Piano sounds/piano-g5.wav");
-            player.Play();
-        }
-        // ---------------------------------------------------------------------------------------
 
         // Functions for Tempo Input Box ---------------------------------------------------------
         private void tempoInputBox_TextChanged_1(object sender, EventArgs e)
@@ -116,6 +87,8 @@ namespace Orchestrate_Project
             {
                 tempo = 60;
             }
+
+            //checkBox.Text = tempo.ToString();
 
         }
 
@@ -237,7 +210,7 @@ namespace Orchestrate_Project
 
             if ((mouseCoord.Y > 44 && mouseCoord.Y < 52) || (mouseCoord.Y > 140 && mouseCoord.Y < 148)
                 || (mouseCoord.Y > 236 && mouseCoord.Y < 244) || (mouseCoord.Y > 332 && mouseCoord.Y < 340) 
-                || (mouseCoord.Y > 428 && mouseCoord.Y < 436) && rhythmResults != null)
+                || (mouseCoord.Y > 428 && mouseCoord.Y < 436) && rhythmResults != "nothingRadio")
             {
                 player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
                     "/Orchestrate Project/Piano sounds/piano-g5.wav");
@@ -287,31 +260,29 @@ namespace Orchestrate_Project
         private void playButton_Click(object sender, EventArgs e)
         {
             int i = 0;
-            if(noteArray[i] == null)
-            {
-                System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
-                    "not been placed yet !!");
-            }
-            else
-            {
-                do
-                {
-                    switch(noteArray[i])
-                    {
-                        case "G":
-                            player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
-                            "/Orchestrate Project/Piano sounds/piano-g5.wav");
-                            player.Play();
-                            break;
-                        default:
-                            break;
+            int sleepTime = (int)((60.0/tempo) * 1000);
+            checkBox.Text = sleepTime.ToString();
 
-                    }
-                    Thread.Sleep(1000);
-                    i++;
+            do
+            {
+                switch(noteArray[i])
+                {
+                    case "G":
+                        player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
+                        "/Orchestrate Project/Piano sounds/piano-g5.wav");
+                        player.Play();
+                        break;
+                    default:
+                        System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
+                        "not been placed yet !!");
+                        break;
+
                 }
-                while (noteArray[i] != null);
+                Thread.Sleep(sleepTime);
+                i++;
             }
+            while (noteArray[i] != null);
+            
         }
         
     }
