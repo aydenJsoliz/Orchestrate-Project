@@ -15,6 +15,8 @@ namespace Orchestrate_Project
         int disableButtonCounter = 0;           // counter for disabling new staff button
         string[] noteArray = new string[75];    // array to hold the notes to be played
         int counterNoteArray = 0;               // counter to update note array properly   
+        int[] rhythmArray = new int[75];        // array to hold the rhythms 
+        int counterRhythmArray = 0;
 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
@@ -230,6 +232,7 @@ namespace Orchestrate_Project
                     mouseCoord.X = mouseCoord.X - 35;
                     mouseCoord.Y = mouseCoord.Y - 60;
                     mgr.DrawImage(quarterNote, mouseCoord);
+                    rhythmArray[counterRhythmArray] = 1;
                     break;
                 case "halfRadio":
                     Bitmap halfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
@@ -237,6 +240,7 @@ namespace Orchestrate_Project
                     mouseCoord.X = mouseCoord.X - 126;
                     mouseCoord.Y = mouseCoord.Y - 70;
                     mgr.DrawImage(halfNote, mouseCoord);
+                    rhythmArray[counterRhythmArray] = 2;
                     break;
                 case "wholeRadio":
                     Bitmap wholeNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
@@ -244,6 +248,7 @@ namespace Orchestrate_Project
                     mouseCoord.X = mouseCoord.X - 25;
                     mouseCoord.Y = mouseCoord.Y - 38;
                     mgr.DrawImage(wholeNote, mouseCoord);
+                    rhythmArray[counterRhythmArray] = 4;
                     break;
                 default:
                     System.Windows.Forms.MessageBox.Show("ERROR !! \nNote not selected !!");
@@ -252,6 +257,7 @@ namespace Orchestrate_Project
             }
 
             counterNoteArray++;
+            counterRhythmArray++;
             mgr.Dispose();   // dispose graphics object for storage
         }
         // -------------------------------------------------------------------------------------
@@ -260,12 +266,25 @@ namespace Orchestrate_Project
         private void playButton_Click(object sender, EventArgs e)
         {
             int i = 0;
-            int sleepTime = (int)((60.0/tempo) * 1000);
-            checkBox.Text = sleepTime.ToString();
+            //int sleepTime = (int)((60.0/tempo) * 1000);
+            
+
+            //if (rhythmArray[i] == 2)
+            //    sleepTime = sleepTime * 2;
+            //else if (rhythmArray[i] == 4)
+            //    sleepTime = sleepTime * 4;
 
             do
             {
-                switch(noteArray[i])
+                int sleepTime = (int)((60.0 / tempo) * 1000);
+
+                if (rhythmArray[i] == 2)        // if next rhythm is half note
+                    sleepTime = sleepTime * 2;
+                else if (rhythmArray[i] == 4)   // if next rhythm is whole note
+                    sleepTime = sleepTime * 4;
+
+                checkBox.Text = sleepTime.ToString();   // here only for testing
+                switch (noteArray[i])
                 {
                     case "G":
                         player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
