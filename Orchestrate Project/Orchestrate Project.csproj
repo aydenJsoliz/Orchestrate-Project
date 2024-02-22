@@ -137,5 +137,32 @@
   <ItemGroup>
     <None Include="Resources\testStaff.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-g4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-e4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-f4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-b4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-d5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-f5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-a4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-c5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-e5.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

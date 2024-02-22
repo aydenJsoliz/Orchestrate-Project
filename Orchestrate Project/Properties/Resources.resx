@@ -157,4 +157,31 @@
   <data name="testStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\testStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="piano_g4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-g4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_e4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-e4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_f4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-f4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_b4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-b4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_d5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-d5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_f5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-f5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_a4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-a4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_c5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-c5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_e5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-e5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

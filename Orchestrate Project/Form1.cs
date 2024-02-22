@@ -16,7 +16,7 @@ namespace Orchestrate_Project
         string[] noteArray = new string[75];    // array to hold the notes to be played
         int counterNoteArray = 0;               // counter to update note array properly   
         int[] rhythmArray = new int[75];        // array to hold the rhythms 
-        int counterRhythmArray = 0;
+        int counterRhythmArray = 0;             // counter to update rhythm array properly
 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
@@ -210,20 +210,86 @@ namespace Orchestrate_Project
 
             var mouseCoord = musicalStaffPanel.PointToClient(Cursor.Position);
 
-            if ((mouseCoord.Y > 44 && mouseCoord.Y < 52) || (mouseCoord.Y > 140 && mouseCoord.Y < 148)
+            // if statement to play the correct note and add it to the noteArray
+            if (( mouseCoord.Y > 56 && mouseCoord.Y < 64) || (mouseCoord.Y > 152 && mouseCoord.Y < 160)
+                || (mouseCoord.Y > 248 && mouseCoord.Y < 256) || (mouseCoord.Y > 344 && mouseCoord.Y < 352)
+                || (mouseCoord.Y > 440 && mouseCoord.Y < 448) && rhythmResults != "nothingRadio")
+            {
+                player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_e4);
+                player.Play();
+                noteArray[counterNoteArray] = "E4";
+            }
+            else if ((mouseCoord.Y >= 52 && mouseCoord.Y <= 56) || (mouseCoord.Y >= 148 && mouseCoord.Y <= 152)
+                || (mouseCoord.Y >= 244 && mouseCoord.Y <= 248) || (mouseCoord.Y >= 340 && mouseCoord.Y <= 344)
+                || (mouseCoord.Y >= 436 && mouseCoord.Y <= 440) && rhythmResults != "nothingRadio")
+            {
+                player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_f4);
+                player.Play();
+                noteArray[counterNoteArray] = "F4";
+            }
+            else if ((mouseCoord.Y > 44 && mouseCoord.Y < 52) || (mouseCoord.Y > 140 && mouseCoord.Y < 148)
                 || (mouseCoord.Y > 236 && mouseCoord.Y < 244) || (mouseCoord.Y > 332 && mouseCoord.Y < 340) 
                 || (mouseCoord.Y > 428 && mouseCoord.Y < 436) && rhythmResults != "nothingRadio")
             {
-                player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
-                    "/Orchestrate Project/Piano sounds/piano-g5.wav");
+                player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_g4);
                 player.Play();
-
-                noteArray[counterNoteArray] = "G";
+                noteArray[counterNoteArray] = "G4";
             }
+            else if ((mouseCoord.Y >= 40 && mouseCoord.Y <= 44) || (mouseCoord.Y >= 136 && mouseCoord.Y <= 140)
+                || (mouseCoord.Y >= 232 && mouseCoord.Y <= 236) || (mouseCoord.Y >= 328 && mouseCoord.Y <= 332)
+                || (mouseCoord.Y >= 424 && mouseCoord.Y <= 428) && rhythmResults != "nothingRadio")
+            {
+                player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_a4);
+                player.Play();
+                noteArray[counterNoteArray] = "A4";
+            }
+            else if ((mouseCoord.Y > 32 && mouseCoord.Y < 40) || (mouseCoord.Y > 128 && mouseCoord.Y < 136)
+                || (mouseCoord.Y > 224 && mouseCoord.Y < 232) || (mouseCoord.Y > 320 && mouseCoord.Y < 328)
+                || (mouseCoord.Y > 416 && mouseCoord.Y < 424) && rhythmResults != "nothingRadio")
+            {
+                player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_b4);
+                player.Play();
+                noteArray[counterNoteArray] = "B4";
+            }
+            else if ((mouseCoord.Y >= 28 && mouseCoord.Y <= 32) || (mouseCoord.Y >= 124 && mouseCoord.Y <= 128)
+                || (mouseCoord.Y >= 220 && mouseCoord.Y <= 224) || (mouseCoord.Y >= 316 && mouseCoord.Y <= 320)
+                || (mouseCoord.Y >= 412 && mouseCoord.Y <= 416) && rhythmResults != "nothingRadio") 
+            {
+                player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_c5);
+                player.Play();
+                noteArray[counterNoteArray] = "C5";
+            }
+            else if ((mouseCoord.Y > 20 && mouseCoord.Y < 28) || (mouseCoord.Y > 116 && mouseCoord.Y < 124)
+                || (mouseCoord.Y > 212 && mouseCoord.Y < 220) || (mouseCoord.Y > 308 && mouseCoord.Y < 316)
+                || (mouseCoord.Y > 404 && mouseCoord.Y < 412) && rhythmResults != "nothingRadio")
+            {
+                player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_d5);
+                player.Play();
+                noteArray[counterNoteArray] = "D5";
+            }
+            else if ((mouseCoord.Y >= 16 && mouseCoord.Y <= 20) || (mouseCoord.Y >= 112 && mouseCoord.Y <= 116)
+                || (mouseCoord.Y >= 208 && mouseCoord.Y <= 212) || (mouseCoord.Y >= 304 && mouseCoord.Y <= 308)
+                || (mouseCoord.Y >= 400 && mouseCoord.Y <= 404) && rhythmResults != "nothingRadio")
+            {
+                player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_e5);
+                player.Play();
+                noteArray[counterNoteArray] = "E5";
+            }
+            else if ((mouseCoord.Y > 8 && mouseCoord.Y < 16) || (mouseCoord.Y > 104 && mouseCoord.Y < 112)
+                || (mouseCoord.Y > 200 && mouseCoord.Y < 208) || (mouseCoord.Y > 296 && mouseCoord.Y < 304)
+                || (mouseCoord.Y > 392 && mouseCoord.Y < 400) && rhythmResults != "nothingRadio")
+            {
+                player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_f5);
+                player.Play();
+                noteArray[counterNoteArray] = "F5";
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("ERROR !! \nInvalid Note Placement !!");
+            }
+                
 
-
-
-
+            // switch statement to draw the correct rhythm and add it to the rhythmArray
             switch (rhythmResults)
             {
                 case "quarterRadio":
@@ -258,6 +324,8 @@ namespace Orchestrate_Project
 
             counterNoteArray++;
             counterRhythmArray++;
+
+            // GRAPHICS OBJECT MUST BE DISPOSED OF NO MATTER WHAT RIGHT BEFORE EVENT ENDS
             mgr.Dispose();   // dispose graphics object for storage
         }
         // -------------------------------------------------------------------------------------
@@ -266,13 +334,6 @@ namespace Orchestrate_Project
         private void playButton_Click(object sender, EventArgs e)
         {
             int i = 0;
-            //int sleepTime = (int)((60.0/tempo) * 1000);
-            
-
-            //if (rhythmArray[i] == 2)
-            //    sleepTime = sleepTime * 2;
-            //else if (rhythmArray[i] == 4)
-            //    sleepTime = sleepTime * 4;
 
             do
             {
@@ -286,9 +347,49 @@ namespace Orchestrate_Project
                 checkBox.Text = sleepTime.ToString();   // here only for testing
                 switch (noteArray[i])
                 {
-                    case "G":
-                        player = new System.Media.SoundPlayer("C:/Users/aydan/OneDrive/Documents" +
-                        "/Orchestrate Project/Piano sounds/piano-g5.wav");
+                    case "E4":
+                        player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
+                            Resources.piano_e4);
+                        player.Play();
+                        break;
+                    case "F4":
+                        player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
+                            Resources.piano_f4);
+                        player.Play();
+                        break;
+                    case "G4":
+                        player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
+                            Resources.piano_g4);
+                        player.Play();
+                        break;
+                    case "A4":
+                        player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
+                            Resources.piano_a4);
+                        player.Play();
+                        break;
+                    case "B4":
+                        player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
+                            Resources.piano_b4);
+                        player.Play();
+                        break;
+                    case "C5":
+                        player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
+                            Resources.piano_c5);
+                        player.Play();
+                        break;
+                    case "D5":
+                        player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
+                            Resources.piano_d5);
+                        player.Play();
+                        break;
+                    case "E5":
+                        player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
+                            Resources.piano_e5);
+                        player.Play();
+                        break;
+                    case "F5":
+                        player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
+                            Resources.piano_f5);
                         player.Play();
                         break;
                     default:
