@@ -47,6 +47,7 @@ namespace Orchestrate_Project
             this.printButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.checkBox = new System.Windows.Forms.TextBox();
+            this.testLabel = new System.Windows.Forms.Label();
             this.musicalStaffPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).BeginInit();
             this.SuspendLayout();
@@ -245,12 +246,22 @@ namespace Orchestrate_Project
             this.checkBox.Size = new System.Drawing.Size(100, 22);
             this.checkBox.TabIndex = 17;
             // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(574, 137);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(46, 17);
+            this.testLabel.TabIndex = 18;
+            this.testLabel.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1065, 802);
+            this.Controls.Add(this.testLabel);
             this.Controls.Add(this.checkBox);
             this.Controls.Add(this.musicalStaffPanel);
             this.Controls.Add(this.label1);
@@ -296,6 +307,7 @@ namespace Orchestrate_Project
         private System.Windows.Forms.Button newMusicLineButton;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox checkBox;
+        private System.Windows.Forms.Label testLabel;
     }
 }
 

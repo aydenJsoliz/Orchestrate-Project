@@ -205,13 +205,19 @@ namespace Orchestrate_Project
 
         private void DrawNotes()
         {
-            Graphics mgr = musicalStaffPanel.CreateGraphics();
-            mgr.SmoothingMode = SmoothingMode.HighQuality;
+            testLabel.Text = "hiiii";
+            //Graphics mgr = musicalStaffPanel.CreateGraphics();
+            //mgr.SmoothingMode = SmoothingMode.HighQuality;
 
             var mouseCoord = musicalStaffPanel.PointToClient(Cursor.Position);
 
             // if statement to play the correct note and add it to the noteArray
-            if (( mouseCoord.Y > 56 && mouseCoord.Y < 64) || (mouseCoord.Y > 152 && mouseCoord.Y < 160)
+            if (mouseCoord.X > (musicalStaffPanel.Width - 45))
+            {
+                System.Windows.Forms.MessageBox.Show("ERROR !! \nInvalid Note Placement !!");
+                return;
+            }
+            else if (( mouseCoord.Y > 56 && mouseCoord.Y < 64) || (mouseCoord.Y > 152 && mouseCoord.Y < 160)
                 || (mouseCoord.Y > 248 && mouseCoord.Y < 256) || (mouseCoord.Y > 344 && mouseCoord.Y < 352)
                 || (mouseCoord.Y > 440 && mouseCoord.Y < 448) && rhythmResults != "nothingRadio")
             {
@@ -286,8 +292,12 @@ namespace Orchestrate_Project
             else
             {
                 System.Windows.Forms.MessageBox.Show("ERROR !! \nInvalid Note Placement !!");
+                return;
             }
-                
+
+            testLabel.Text = "bye";
+            Graphics mgr = musicalStaffPanel.CreateGraphics();
+            mgr.SmoothingMode = SmoothingMode.HighQuality;
 
             // switch statement to draw the correct rhythm and add it to the rhythmArray
             switch (rhythmResults)
@@ -327,6 +337,7 @@ namespace Orchestrate_Project
 
             // GRAPHICS OBJECT MUST BE DISPOSED OF NO MATTER WHAT RIGHT BEFORE EVENT ENDS
             mgr.Dispose();   // dispose graphics object for storage
+            
         }
         // -------------------------------------------------------------------------------------
 
