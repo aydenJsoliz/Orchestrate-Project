@@ -8,7 +8,7 @@ namespace Orchestrate_Project
 {
     public partial class Form1 : Form
     {
-        string rhythmResults;                   // holds the rhythm chosen from NoteForm
+        string rhythmResults = "nothingRadio";  // holds the rhythm chosen from NoteForm
         int tempo = 60;                         // tempo for playing notes
         int staffHght = 12;                     // the distance from staff line to staff line
         int countForDrawing = 6;                // counter for drawing staff
@@ -154,14 +154,23 @@ namespace Orchestrate_Project
 
             countForDrawing = i;
             disableButtonCounter++;
-            gr.Dispose(); // disposes graphics object for storage
 
-            if (disableButtonCounter == 4)
+            // disables Add Staff Button and draws some graphical changes to represent end of staff
+            if (disableButtonCounter == 4) 
             {
+                SolidBrush endBrush = new SolidBrush(Color.Black);
+                gr.FillRectangle(endBrush, musicalStaffPanel.Width - 52, (i * staffHght) - 60,
+                    7, 48);
+                gr.DrawLine(Pens.Black, musicalStaffPanel.Width - 57, (i * staffHght) - 12,
+                    musicalStaffPanel.Width - 57, (i * staffHght) - 60);
+
                 newMusicLineButton.BackColor = Color.LightGray;
                 newMusicLineButton.ForeColor = Color.Gray;
                 newMusicLineButton.Enabled = false;
+
+                endBrush.Dispose();
             }
+            gr.Dispose(); // disposes graphics object for storage
         }
 
         private void newMusicLineButton_Click(object sender, EventArgs e)
@@ -206,84 +215,90 @@ namespace Orchestrate_Project
         private void DrawNotes()
         {
             testLabel.Text = "hiiii";
-            //Graphics mgr = musicalStaffPanel.CreateGraphics();
-            //mgr.SmoothingMode = SmoothingMode.HighQuality;
 
             var mouseCoord = musicalStaffPanel.PointToClient(Cursor.Position);
 
             // if statement to play the correct note and add it to the noteArray
-            if (mouseCoord.X > (musicalStaffPanel.Width - 45))
+            // each else-if is for a line or space in the staff, the coordinates for each part 
+            // of the staff in the panel is accounted for. The disableButtonCounter check is to make
+            // sure that notes cannot be placed until those sections of the staff have been drawn
+            if (String.Equals(rhythmResults, "nothingRadio") == true)
+            {
+                System.Windows.Forms.MessageBox.Show("ERROR !! \nNote Not Selected !!");
+                return;
+            }
+            else if (mouseCoord.X > (musicalStaffPanel.Width - 45)) 
             {
                 System.Windows.Forms.MessageBox.Show("ERROR !! \nInvalid Note Placement !!");
                 return;
             }
-            else if (( mouseCoord.Y > 56 && mouseCoord.Y < 64) || (mouseCoord.Y > 152 && mouseCoord.Y < 160)
-                || (mouseCoord.Y > 248 && mouseCoord.Y < 256) || (mouseCoord.Y > 344 && mouseCoord.Y < 352)
-                || (mouseCoord.Y > 440 && mouseCoord.Y < 448) && rhythmResults != "nothingRadio")
+            else if (( mouseCoord.Y > 56 && mouseCoord.Y < 64) || (mouseCoord.Y > 152 && mouseCoord.Y < 160 && disableButtonCounter >= 1)
+                || (mouseCoord.Y > 248 && mouseCoord.Y < 256 && disableButtonCounter >= 2) || (mouseCoord.Y > 344 && mouseCoord.Y < 352 && disableButtonCounter >= 3)
+                || (mouseCoord.Y > 440 && mouseCoord.Y < 448 && disableButtonCounter == 4))
             {
                 player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_e4);
                 player.Play();
                 noteArray[counterNoteArray] = "E4";
             }
-            else if ((mouseCoord.Y >= 52 && mouseCoord.Y <= 56) || (mouseCoord.Y >= 148 && mouseCoord.Y <= 152)
-                || (mouseCoord.Y >= 244 && mouseCoord.Y <= 248) || (mouseCoord.Y >= 340 && mouseCoord.Y <= 344)
-                || (mouseCoord.Y >= 436 && mouseCoord.Y <= 440) && rhythmResults != "nothingRadio")
+            else if ((mouseCoord.Y >= 52 && mouseCoord.Y <= 56) || (mouseCoord.Y >= 148 && mouseCoord.Y <= 152 && disableButtonCounter >= 1)
+                || (mouseCoord.Y >= 244 && mouseCoord.Y <= 248 && disableButtonCounter >= 2) || (mouseCoord.Y >= 340 && mouseCoord.Y <= 344 && disableButtonCounter >= 3)
+                || (mouseCoord.Y >= 436 && mouseCoord.Y <= 440 && disableButtonCounter == 4))
             {
                 player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_f4);
                 player.Play();
                 noteArray[counterNoteArray] = "F4";
             }
-            else if ((mouseCoord.Y > 44 && mouseCoord.Y < 52) || (mouseCoord.Y > 140 && mouseCoord.Y < 148)
-                || (mouseCoord.Y > 236 && mouseCoord.Y < 244) || (mouseCoord.Y > 332 && mouseCoord.Y < 340) 
-                || (mouseCoord.Y > 428 && mouseCoord.Y < 436) && rhythmResults != "nothingRadio")
+            else if ((mouseCoord.Y > 44 && mouseCoord.Y < 52) || (mouseCoord.Y > 140 && mouseCoord.Y < 148 && disableButtonCounter >= 1)
+                || (mouseCoord.Y > 236 && mouseCoord.Y < 244 && disableButtonCounter >= 2) || (mouseCoord.Y > 332 && mouseCoord.Y < 340 && disableButtonCounter >= 3) 
+                || (mouseCoord.Y > 428 && mouseCoord.Y < 436 && disableButtonCounter == 4))
             {
                 player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_g4);
                 player.Play();
                 noteArray[counterNoteArray] = "G4";
             }
-            else if ((mouseCoord.Y >= 40 && mouseCoord.Y <= 44) || (mouseCoord.Y >= 136 && mouseCoord.Y <= 140)
-                || (mouseCoord.Y >= 232 && mouseCoord.Y <= 236) || (mouseCoord.Y >= 328 && mouseCoord.Y <= 332)
-                || (mouseCoord.Y >= 424 && mouseCoord.Y <= 428) && rhythmResults != "nothingRadio")
+            else if ((mouseCoord.Y >= 40 && mouseCoord.Y <= 44) || (mouseCoord.Y >= 136 && mouseCoord.Y <= 140 && disableButtonCounter >= 1)
+                || (mouseCoord.Y >= 232 && mouseCoord.Y <= 236 && disableButtonCounter >= 2) || (mouseCoord.Y >= 328 && mouseCoord.Y <= 332 && disableButtonCounter >= 3)
+                || (mouseCoord.Y >= 424 && mouseCoord.Y <= 428 && disableButtonCounter == 4))
             {
                 player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_a4);
                 player.Play();
                 noteArray[counterNoteArray] = "A4";
             }
-            else if ((mouseCoord.Y > 32 && mouseCoord.Y < 40) || (mouseCoord.Y > 128 && mouseCoord.Y < 136)
-                || (mouseCoord.Y > 224 && mouseCoord.Y < 232) || (mouseCoord.Y > 320 && mouseCoord.Y < 328)
-                || (mouseCoord.Y > 416 && mouseCoord.Y < 424) && rhythmResults != "nothingRadio")
+            else if ((mouseCoord.Y > 32 && mouseCoord.Y < 40) || (mouseCoord.Y > 128 && mouseCoord.Y < 136 && disableButtonCounter >= 1)
+                || (mouseCoord.Y > 224 && mouseCoord.Y < 232 && disableButtonCounter >= 2) || (mouseCoord.Y > 320 && mouseCoord.Y < 328 && disableButtonCounter >= 3)
+                || (mouseCoord.Y > 416 && mouseCoord.Y < 424 && disableButtonCounter == 4))
             {
                 player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_b4);
                 player.Play();
                 noteArray[counterNoteArray] = "B4";
             }
-            else if ((mouseCoord.Y >= 28 && mouseCoord.Y <= 32) || (mouseCoord.Y >= 124 && mouseCoord.Y <= 128)
-                || (mouseCoord.Y >= 220 && mouseCoord.Y <= 224) || (mouseCoord.Y >= 316 && mouseCoord.Y <= 320)
-                || (mouseCoord.Y >= 412 && mouseCoord.Y <= 416) && rhythmResults != "nothingRadio") 
+            else if ((mouseCoord.Y >= 28 && mouseCoord.Y <= 32) || (mouseCoord.Y >= 124 && mouseCoord.Y <= 128 && disableButtonCounter >= 1)
+                || (mouseCoord.Y >= 220 && mouseCoord.Y <= 224 && disableButtonCounter >= 2) || (mouseCoord.Y >= 316 && mouseCoord.Y <= 320 && disableButtonCounter >= 3)
+                || (mouseCoord.Y >= 412 && mouseCoord.Y <= 416 && disableButtonCounter == 4)) 
             {
                 player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_c5);
                 player.Play();
                 noteArray[counterNoteArray] = "C5";
             }
-            else if ((mouseCoord.Y > 20 && mouseCoord.Y < 28) || (mouseCoord.Y > 116 && mouseCoord.Y < 124)
-                || (mouseCoord.Y > 212 && mouseCoord.Y < 220) || (mouseCoord.Y > 308 && mouseCoord.Y < 316)
-                || (mouseCoord.Y > 404 && mouseCoord.Y < 412) && rhythmResults != "nothingRadio")
+            else if ((mouseCoord.Y > 20 && mouseCoord.Y < 28) || (mouseCoord.Y > 116 && mouseCoord.Y < 124 && disableButtonCounter >= 1)
+                || (mouseCoord.Y > 212 && mouseCoord.Y < 220 && disableButtonCounter >= 2) || (mouseCoord.Y > 308 && mouseCoord.Y < 316 && disableButtonCounter >= 3)
+                || (mouseCoord.Y > 404 && mouseCoord.Y < 412 && disableButtonCounter == 4))
             {
                 player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_d5);
                 player.Play();
                 noteArray[counterNoteArray] = "D5";
             }
-            else if ((mouseCoord.Y >= 16 && mouseCoord.Y <= 20) || (mouseCoord.Y >= 112 && mouseCoord.Y <= 116)
-                || (mouseCoord.Y >= 208 && mouseCoord.Y <= 212) || (mouseCoord.Y >= 304 && mouseCoord.Y <= 308)
-                || (mouseCoord.Y >= 400 && mouseCoord.Y <= 404) && rhythmResults != "nothingRadio")
+            else if ((mouseCoord.Y >= 16 && mouseCoord.Y <= 20) || (mouseCoord.Y >= 112 && mouseCoord.Y <= 116 && disableButtonCounter >= 1)
+                || (mouseCoord.Y >= 208 && mouseCoord.Y <= 212 && disableButtonCounter >= 2) || (mouseCoord.Y >= 304 && mouseCoord.Y <= 308 && disableButtonCounter >= 3)
+                || (mouseCoord.Y >= 400 && mouseCoord.Y <= 404 && disableButtonCounter == 4))
             {
                 player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_e5);
                 player.Play();
                 noteArray[counterNoteArray] = "E5";
             }
-            else if ((mouseCoord.Y > 8 && mouseCoord.Y < 16) || (mouseCoord.Y > 104 && mouseCoord.Y < 112)
-                || (mouseCoord.Y > 200 && mouseCoord.Y < 208) || (mouseCoord.Y > 296 && mouseCoord.Y < 304)
-                || (mouseCoord.Y > 392 && mouseCoord.Y < 400) && rhythmResults != "nothingRadio")
+            else if ((mouseCoord.Y > 8 && mouseCoord.Y < 16) || (mouseCoord.Y > 104 && mouseCoord.Y < 112 && disableButtonCounter >= 1)
+                || (mouseCoord.Y > 200 && mouseCoord.Y < 208 && disableButtonCounter >= 2) || (mouseCoord.Y > 296 && mouseCoord.Y < 304 && disableButtonCounter >= 3)
+                || (mouseCoord.Y > 392 && mouseCoord.Y < 400 && disableButtonCounter == 4))
             {
                 player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.Resources.piano_f5);
                 player.Play();
@@ -295,7 +310,7 @@ namespace Orchestrate_Project
                 return;
             }
 
-            testLabel.Text = "bye";
+            testLabel.Text = "byeee";
             Graphics mgr = musicalStaffPanel.CreateGraphics();
             mgr.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -344,7 +359,7 @@ namespace Orchestrate_Project
         // Functions for Playing notes ---------------------------------------------------------
         private void playButton_Click(object sender, EventArgs e)
         {
-            int i = 0;
+            int i = 0; // index for arrays
 
             do
             {
