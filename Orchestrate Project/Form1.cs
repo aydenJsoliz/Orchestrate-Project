@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
+using System.Text;
 
 namespace Orchestrate_Project
 {
@@ -17,6 +19,9 @@ namespace Orchestrate_Project
         int counterNoteArray = 0;               // counter to update note array properly   
         int[] rhythmArray = new int[75];        // array to hold the rhythms 
         int counterRhythmArray = 0;             // counter to update rhythm array properly
+        Point[] pointArray = new Point[75];     // array for storing drawn note coordinates
+        int counterPointArray = 0;              // counter to update Point array
+        int checkForUndo = 0;                   // used to make undo function work
 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
@@ -168,7 +173,7 @@ namespace Orchestrate_Project
                 newMusicLineButton.ForeColor = Color.Gray;
                 newMusicLineButton.Enabled = false;
 
-                endBrush.Dispose();
+                endBrush.Dispose();  // disposes graphics object for storage
             }
             gr.Dispose(); // disposes graphics object for storage
         }
@@ -215,6 +220,47 @@ namespace Orchestrate_Project
         private void DrawNotes()
         {
             testLabel.Text = "hiiii";
+
+            if(checkForUndo == 1)
+            {
+                
+                int i = 0;
+                Graphics redraw = musicalStaffPanel.CreateGraphics();
+                do
+                {
+                    switch (rhythmArray[i])
+                    {
+                        case 1:
+                            Bitmap quarterNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                                Resources.NewDrawnQuarterNote), 60, 110);
+                            redraw.DrawImage(quarterNote, pointArray[i]);
+                            break;
+                        case 2:
+                            Bitmap halfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                                Resources.NewDrawnHalfNote), 250, 120);
+                            redraw.DrawImage(halfNote, pointArray[i]);
+                            break;
+                        case 4:
+                            Bitmap wholeNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                                Resources.DrawnWholeNote), 45, 70);
+                            redraw.DrawImage(wholeNote, pointArray[i]);
+                            break;
+                        default:
+                            System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
+                            "not been placed yet !!");
+                            break;
+                    }
+
+                    i++;
+                }
+                while (noteArray[i] != null);
+
+                checkForUndo = 0;
+                redraw.Dispose();
+                testLabel.Text = "done stuff";
+                return;
+            }
+
 
             var mouseCoord = musicalStaffPanel.PointToClient(Cursor.Position);
 
@@ -324,6 +370,7 @@ namespace Orchestrate_Project
                     mouseCoord.Y = mouseCoord.Y - 60;
                     mgr.DrawImage(quarterNote, mouseCoord);
                     rhythmArray[counterRhythmArray] = 1;
+                    pointArray[counterPointArray] = mouseCoord;
                     break;
                 case "halfRadio":
                     Bitmap halfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
@@ -332,6 +379,7 @@ namespace Orchestrate_Project
                     mouseCoord.Y = mouseCoord.Y - 70;
                     mgr.DrawImage(halfNote, mouseCoord);
                     rhythmArray[counterRhythmArray] = 2;
+                    pointArray[counterPointArray] = mouseCoord;
                     break;
                 case "wholeRadio":
                     Bitmap wholeNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
@@ -340,6 +388,7 @@ namespace Orchestrate_Project
                     mouseCoord.Y = mouseCoord.Y - 38;
                     mgr.DrawImage(wholeNote, mouseCoord);
                     rhythmArray[counterRhythmArray] = 4;
+                    pointArray[counterPointArray] = mouseCoord;
                     break;
                 default:
                     System.Windows.Forms.MessageBox.Show("ERROR !! \nNote not selected !!");
@@ -349,6 +398,7 @@ namespace Orchestrate_Project
 
             counterNoteArray++;
             counterRhythmArray++;
+            counterPointArray++;
 
             // GRAPHICS OBJECT MUST BE DISPOSED OF NO MATTER WHAT RIGHT BEFORE EVENT ENDS
             mgr.Dispose();   // dispose graphics object for storage
@@ -359,6 +409,8 @@ namespace Orchestrate_Project
         // Functions for Playing notes ---------------------------------------------------------
         private void playButton_Click(object sender, EventArgs e)
         {
+            //playButton.Hide();
+            //Cursor.Hide();
             int i = 0; // index for arrays
 
             do
@@ -428,8 +480,16 @@ namespace Orchestrate_Project
                 i++;
             }
             while (noteArray[i] != null);
+            //Cursor.Show();
+            //playButton.Show();
+        }
+
+        private void undoButton_Click(object sender, EventArgs e)
+        {
+            musicalStaffPanel.Invalidate();
+            checkForUndo = 1;
+            DrawNotes();
             
         }
-        
     }
 }

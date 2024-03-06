@@ -48,6 +48,7 @@ namespace Orchestrate_Project
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.checkBox = new System.Windows.Forms.TextBox();
             this.testLabel = new System.Windows.Forms.Label();
+            this.undoButton = new System.Windows.Forms.Button();
             this.musicalStaffPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).BeginInit();
             this.SuspendLayout();
@@ -255,12 +256,23 @@ namespace Orchestrate_Project
             this.testLabel.TabIndex = 18;
             this.testLabel.Text = "label2";
             // 
+            // undoButton
+            // 
+            this.undoButton.Location = new System.Drawing.Point(652, 145);
+            this.undoButton.Name = "undoButton";
+            this.undoButton.Size = new System.Drawing.Size(75, 23);
+            this.undoButton.TabIndex = 19;
+            this.undoButton.Text = "Undo";
+            this.undoButton.UseVisualStyleBackColor = true;
+            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1065, 802);
+            this.Controls.Add(this.undoButton);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.checkBox);
             this.Controls.Add(this.musicalStaffPanel);
@@ -308,6 +320,7 @@ namespace Orchestrate_Project
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox checkBox;
         private System.Windows.Forms.Label testLabel;
+        private System.Windows.Forms.Button undoButton;
     }
 }
 
