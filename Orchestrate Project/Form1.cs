@@ -221,12 +221,13 @@ namespace Orchestrate_Project
         {
             testLabel.Text = "hiiii";
 
+            // this if-statement is executed if undo button is pressed, thus checkForUndo becomes 1
             if(checkForUndo == 1)
             {
                 
                 int i = 0;
                 Graphics redraw = musicalStaffPanel.CreateGraphics();
-                do
+                while (noteArray[i] != null && i < counterNoteArray - 1) 
                 {
                     switch (rhythmArray[i])
                     {
@@ -253,7 +254,15 @@ namespace Orchestrate_Project
 
                     i++;
                 }
-                while (noteArray[i] != null);
+
+                if(noteArray[0] != null)    // to ensure counters do not go below 0
+                {
+                    counterNoteArray--;
+                    counterPointArray--;
+                    counterRhythmArray--;
+
+                    noteArray[counterNoteArray] = null;
+                }
 
                 checkForUndo = 0;
                 redraw.Dispose();
