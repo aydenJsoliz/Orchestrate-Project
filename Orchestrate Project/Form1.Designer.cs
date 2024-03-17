@@ -40,15 +40,16 @@ namespace Orchestrate_Project
             this.button1 = new System.Windows.Forms.Button();
             this.newMusicLineButton = new System.Windows.Forms.Button();
             this.musicalStaffPanel = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBox = new System.Windows.Forms.TextBox();
-            this.testLabel = new System.Windows.Forms.Label();
-            this.undoButton = new System.Windows.Forms.Button();
             this.trebleAndTime = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.undoButton = new System.Windows.Forms.Button();
             this.playButton = new System.Windows.Forms.Button();
             this.notePopupButton = new System.Windows.Forms.Button();
             this.printButton = new System.Windows.Forms.Button();
+            this.checkBox = new System.Windows.Forms.TextBox();
+            this.testLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.testRedraw = new System.Windows.Forms.Label();
             this.musicalStaffPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,35 +176,6 @@ namespace Orchestrate_Project
             this.musicalStaffPanel.Click += new System.EventHandler(this.musicalStaffPanel_Click);
             this.musicalStaffPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.musicalStaffPanel_Paint);
             this.musicalStaffPanel.MouseLeave += new System.EventHandler(this.musicalStaffPanel_MouseLeave);
-            this.musicalStaffPanel.MouseHover += new System.EventHandler(this.musicalStaffPanel_MouseHover);
-            // 
-            // checkBox
-            // 
-            this.checkBox.Location = new System.Drawing.Point(76, 12);
-            this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(100, 22);
-            this.checkBox.TabIndex = 17;
-            // 
-            // testLabel
-            // 
-            this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(183, 15);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(46, 17);
-            this.testLabel.TabIndex = 18;
-            this.testLabel.Text = "label2";
-            // 
-            // undoButton
-            // 
-            this.undoButton.BackgroundImage = global::Orchestrate_Project.Properties.Resources.UndoPic;
-            this.undoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.undoButton.Location = new System.Drawing.Point(840, 132);
-            this.undoButton.Name = "undoButton";
-            this.undoButton.Size = new System.Drawing.Size(69, 60);
-            this.undoButton.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.undoButton, "Undo Note");
-            this.undoButton.UseVisualStyleBackColor = true;
-            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
             // 
             // trebleAndTime
             // 
@@ -216,6 +188,18 @@ namespace Orchestrate_Project
             this.trebleAndTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.trebleAndTime.TabIndex = 0;
             this.trebleAndTime.TabStop = false;
+            // 
+            // undoButton
+            // 
+            this.undoButton.BackgroundImage = global::Orchestrate_Project.Properties.Resources.UndoPic;
+            this.undoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.undoButton.Location = new System.Drawing.Point(840, 132);
+            this.undoButton.Name = "undoButton";
+            this.undoButton.Size = new System.Drawing.Size(69, 60);
+            this.undoButton.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.undoButton, "Undo Note");
+            this.undoButton.UseVisualStyleBackColor = true;
+            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
             // 
             // playButton
             // 
@@ -258,6 +242,22 @@ namespace Orchestrate_Project
             this.printButton.UseVisualStyleBackColor = false;
             this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
+            // checkBox
+            // 
+            this.checkBox.Location = new System.Drawing.Point(76, 12);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(100, 22);
+            this.checkBox.TabIndex = 17;
+            // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(183, 15);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(46, 17);
+            this.testLabel.TabIndex = 18;
+            this.testLabel.Text = "label2";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Orchestrate_Project.Properties.Resources.musical_notes;
@@ -268,12 +268,22 @@ namespace Orchestrate_Project
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
+            // testRedraw
+            // 
+            this.testRedraw.AutoSize = true;
+            this.testRedraw.Location = new System.Drawing.Point(260, 13);
+            this.testRedraw.Name = "testRedraw";
+            this.testRedraw.Size = new System.Drawing.Size(46, 17);
+            this.testRedraw.TabIndex = 21;
+            this.testRedraw.Text = "label3";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1065, 802);
+            this.Controls.Add(this.testRedraw);
             this.Controls.Add(this.undoButton);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.checkBox);
@@ -324,6 +334,7 @@ namespace Orchestrate_Project
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.Button undoButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label testRedraw;
     }
 }
 

@@ -137,7 +137,6 @@ namespace Orchestrate_Project
             g.DrawLine(Pens.Black, (musicalStaffPanel.Width / 2) + 150, 12, (musicalStaffPanel.Width / 2) + 150, 60);
             g.DrawLine(Pens.Black, musicalStaffPanel.Width - 45, 12, musicalStaffPanel.Width - 45, 60);
 
-
             g.Dispose(); // dispose graphics object for storage
         }
 
@@ -185,29 +184,6 @@ namespace Orchestrate_Project
         {
             countForDrawing = countForDrawing + 3;
             DrawLines();
-        }
-
-        private void musicalStaffPanel_MouseHover(object sender, EventArgs e)
-        {
-            //{
-            //    case "quarterRadio":
-            //        Bitmap bmp1 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-            //            Resources.NewDrawnQuarterNote), 100, 150);
-            //        this.Cursor = new Cursor(bmp1.GetHicon());
-            //        break;
-            //    case "halfRadio":
-            //        Bitmap bmp2 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-            //            Resources.NewDrawnHalfNote), 370, 180);
-            //        this.Cursor = new Cursor(bmp2.GetHicon());
-            //        break;
-            //    case "wholeRadio":
-            //        Bitmap bmp3 = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
-            //            Resources.DrawnWholeNote), 55, 80);
-            //        this.Cursor = new Cursor(bmp3.GetHicon());
-            //        break;
-            //    default:
-            //        break;
-            //}
         }
 
         private void musicalStaffPanel_MouseLeave(object sender, EventArgs e)
@@ -439,8 +415,7 @@ namespace Orchestrate_Project
         // Functions for Playing notes ---------------------------------------------------------
         private void playButton_Click(object sender, EventArgs e)
         {
-            //playButton.Hide();
-            //Cursor.Hide();
+            
             int i = 0; // index for arrays
 
             do
@@ -514,19 +489,66 @@ namespace Orchestrate_Project
                 i++;
             }
             while (noteArray[i] != null);
-            //Cursor.Show();
-            //playButton.Show();
-        }
 
+        }
+        // -------------------------------------------------------------------------------------
+
+        // Function for Undo Button ------------------------------------------------------------
         private void undoButton_Click(object sender, EventArgs e)
         {
-            musicalStaffPanel.Invalidate();
+            // musicalStaffPanel.Invalidate();
+            musicalStaffPanel.Refresh();
 
-
-
+            // these functions redraw the staff lines that get erased on Refresh, and all the
+            // notes placed exempting the most recent note
+            RedrawLines();
             checkForUndo = 1;
             DrawNotes();
             
+        }
+
+        private void RedrawLines()
+        {
+            // all variables needed to redraw staff lines correctly
+            Graphics draw = musicalStaffPanel.CreateGraphics();
+            int i;
+            int count = 9;
+            int staffButtonCount = disableButtonCounter;
+            while (staffButtonCount != 0)
+            {
+                for (i = count; i < count + 5; i++)
+                {
+                    draw.DrawLine(Pens.Black, 0, i * staffHght, musicalStaffPanel.Width - 45, i * staffHght);
+                }
+                draw.DrawLine(Pens.Black, 0, (i * staffHght) - 12, 0, (i * staffHght) - 60);
+                draw.DrawLine(Pens.Black, (musicalStaffPanel.Width / 3) + 30, (i * staffHght) - 12,
+                   (musicalStaffPanel.Width / 3) + 30, (i * staffHght) - 60);
+                draw.DrawLine(Pens.Black, (musicalStaffPanel.Width / 2) + 150, (i * staffHght) - 12,
+                    (musicalStaffPanel.Width / 2) + 150, (i * staffHght) - 60);
+                draw.DrawLine(Pens.Black, musicalStaffPanel.Width - 45, (i * staffHght) - 12,
+                    musicalStaffPanel.Width - 45, (i * staffHght) - 60);
+
+                count = i + 3;
+                staffButtonCount--;
+                testRedraw.Text = i.ToString();
+
+                if (disableButtonCounter == 4)
+                {
+                    SolidBrush endBrush = new SolidBrush(Color.Black);
+                    draw.FillRectangle(endBrush, musicalStaffPanel.Width - 52, 396,
+                        7, 48);
+                    draw.DrawLine(Pens.Black, musicalStaffPanel.Width - 57, 443,
+                        musicalStaffPanel.Width - 57, 396);
+
+                    newMusicLineButton.BackColor = Color.LightGray;
+                    newMusicLineButton.ForeColor = Color.Gray;
+                    newMusicLineButton.Enabled = false;
+
+                    endBrush.Dispose();  // disposes graphics object for storage
+                }
+            }
+
+            draw.Dispose();
         }
     }
 }
