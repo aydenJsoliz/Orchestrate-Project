@@ -103,6 +103,16 @@ namespace Orchestrate_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DrawnQuarterRest {
+            get {
+                object obj = ResourceManager.GetObject("DrawnQuarterRest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DrawnWholeNote {
             get {
                 object obj = ResourceManager.GetObject("DrawnWholeNote", resourceCulture);
@@ -267,6 +277,16 @@ namespace Orchestrate_Project.Properties {
         internal static System.Drawing.Bitmap PrinterPic {
             get {
                 object obj = ResourceManager.GetObject("PrinterPic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuarterRest {
+            get {
+                object obj = ResourceManager.GetObject("QuarterRest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

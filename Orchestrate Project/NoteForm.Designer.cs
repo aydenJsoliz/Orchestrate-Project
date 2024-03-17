@@ -35,13 +35,16 @@ namespace Orchestrate_Project
             this.wholeRadio = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nothingRadio = new System.Windows.Forms.RadioButton();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.quarterRestRadio = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,26 +91,37 @@ namespace Orchestrate_Project
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.quarterRestRadio);
             this.panel1.Controls.Add(this.nothingRadio);
             this.panel1.Controls.Add(this.quarterRadio);
             this.panel1.Controls.Add(this.halfRadio);
             this.panel1.Controls.Add(this.wholeRadio);
             this.panel1.Location = new System.Drawing.Point(77, 252);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(604, 100);
+            this.panel1.Size = new System.Drawing.Size(750, 100);
             this.panel1.TabIndex = 8;
             // 
             // nothingRadio
             // 
             this.nothingRadio.AutoSize = true;
             this.nothingRadio.Checked = true;
-            this.nothingRadio.Location = new System.Drawing.Point(457, 21);
+            this.nothingRadio.Location = new System.Drawing.Point(645, 21);
             this.nothingRadio.Name = "nothingRadio";
             this.nothingRadio.Size = new System.Drawing.Size(78, 21);
             this.nothingRadio.TabIndex = 9;
             this.nothingRadio.TabStop = true;
             this.nothingRadio.Text = "Nothing";
             this.nothingRadio.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::Orchestrate_Project.Properties.Resources.DrawnQuarterRest;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(502, 63);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(194, 204);
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -119,16 +133,6 @@ namespace Orchestrate_Project
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Orchestrate_Project.Properties.Resources.NewDrawnHalfNote;
-            this.pictureBox2.Location = new System.Drawing.Point(-119, -28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(800, 400);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Orchestrate_Project.Properties.Resources.NewDrawnQuarterNote;
@@ -139,12 +143,34 @@ namespace Orchestrate_Project
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Orchestrate_Project.Properties.Resources.NewDrawnHalfNote;
+            this.pictureBox2.Location = new System.Drawing.Point(-119, -28);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(800, 400);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // quarterRestRadio
+            // 
+            this.quarterRestRadio.AutoSize = true;
+            this.quarterRestRadio.Location = new System.Drawing.Point(472, 21);
+            this.quarterRestRadio.Name = "quarterRestRadio";
+            this.quarterRestRadio.Size = new System.Drawing.Size(111, 21);
+            this.quarterRestRadio.TabIndex = 10;
+            this.quarterRestRadio.TabStop = true;
+            this.quarterRestRadio.Text = "Quarter Rest";
+            this.quarterRestRadio.UseVisualStyleBackColor = true;
+            // 
             // NoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(832, 450);
+            this.ClientSize = new System.Drawing.Size(908, 450);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
@@ -156,9 +182,10 @@ namespace Orchestrate_Project
             this.Text = "Note Selection";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,5 +201,7 @@ namespace Orchestrate_Project
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton nothingRadio;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.RadioButton quarterRestRadio;
     }
 }

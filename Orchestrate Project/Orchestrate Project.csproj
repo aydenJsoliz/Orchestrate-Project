@@ -176,5 +176,11 @@
   <ItemGroup>
     <None Include="Resources\UndoPic.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuarterRest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DrawnQuarterRest.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

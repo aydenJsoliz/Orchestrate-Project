@@ -23,7 +23,7 @@ namespace Orchestrate_Project
         int counterPointArray = 0;              // counter to update Point array
         int checkForUndo = 0;                   // used to make undo function work
 
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();   // used to play audio
 
         public Form1()
         {
@@ -62,6 +62,9 @@ namespace Orchestrate_Project
                     break;
                 case "wholeRadio":
                     radioLabel.Text = "Selected: Whole Note";
+                    break;
+                case "quarterRestRadio":
+                    radioLabel.Text = "Selected: Quarter Rest";
                     break;
                 case "nothingRadio":
                     radioLabel.Text = "Selected: Nothing";
@@ -246,6 +249,11 @@ namespace Orchestrate_Project
                                 Resources.DrawnWholeNote), 45, 70);
                             redraw.DrawImage(wholeNote, pointArray[i]);
                             break;
+                        case 5:
+                            Bitmap quarterRest = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                                Resources.DrawnQuarterRest), 45, 70);
+                            redraw.DrawImage(quarterRest, pointArray[i]);
+                            break;
                         default:
                             System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
                             "not been placed yet !!");
@@ -286,6 +294,10 @@ namespace Orchestrate_Project
             {
                 System.Windows.Forms.MessageBox.Show("ERROR !! \nInvalid Note Placement !!");
                 return;
+            }
+            else if (String.Equals(rhythmResults, "quarterRestRadio") == true)
+            {
+                noteArray[counterNoteArray] = "N";
             }
             else if (( mouseCoord.Y > 56 && mouseCoord.Y < 64) || (mouseCoord.Y > 152 && mouseCoord.Y < 160 && disableButtonCounter >= 1)
                 || (mouseCoord.Y > 248 && mouseCoord.Y < 256 && disableButtonCounter >= 2) || (mouseCoord.Y > 344 && mouseCoord.Y < 352 && disableButtonCounter >= 3)
@@ -399,6 +411,15 @@ namespace Orchestrate_Project
                     rhythmArray[counterRhythmArray] = 4;
                     pointArray[counterPointArray] = mouseCoord;
                     break;
+                case "quarterRestRadio":
+                    Bitmap quarterRest = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.DrawnQuarterRest), 45, 70);
+                    mouseCoord.X = mouseCoord.X - 28;
+                    mouseCoord.Y = mouseCoord.Y - 38;
+                    mgr.DrawImage(quarterRest, mouseCoord);
+                    rhythmArray[counterRhythmArray] = 5;
+                    pointArray[counterPointArray] = mouseCoord;
+                    break;
                 default:
                     System.Windows.Forms.MessageBox.Show("ERROR !! \nNote not selected !!");
                     break;
@@ -479,6 +500,9 @@ namespace Orchestrate_Project
                         player = new System.Media.SoundPlayer(Orchestrate_Project.Properties.
                             Resources.piano_f5);
                         player.Play();
+                        break;
+                    case "N":
+                        player.Stop();
                         break;
                     default:
                         System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
