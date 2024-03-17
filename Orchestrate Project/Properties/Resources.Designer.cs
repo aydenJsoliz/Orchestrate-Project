@@ -123,6 +123,16 @@ namespace Orchestrate_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap musical_notes {
+            get {
+                object obj = ResourceManager.GetObject("musical-notes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NewDrawnHalfNote {
             get {
                 object obj = ResourceManager.GetObject("NewDrawnHalfNote", resourceCulture);
@@ -136,6 +146,26 @@ namespace Orchestrate_Project.Properties {
         internal static System.Drawing.Bitmap NewDrawnQuarterNote {
             get {
                 object obj = ResourceManager.GetObject("NewDrawnQuarterNote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Notes {
+            get {
+                object obj = ResourceManager.GetObject("Notes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NotesTransparent {
+            get {
+                object obj = ResourceManager.GetObject("NotesTransparent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -267,6 +297,16 @@ namespace Orchestrate_Project.Properties {
         internal static System.Drawing.Bitmap Treble_Time {
             get {
                 object obj = ResourceManager.GetObject("Treble&Time", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UndoPic {
+            get {
+                object obj = ResourceManager.GetObject("UndoPic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

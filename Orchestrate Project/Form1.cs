@@ -29,6 +29,7 @@ namespace Orchestrate_Project
         {
             InitializeComponent();
             // nf = new NoteForm(); //this
+
         }
 
         private void printButton_Click(object sender, EventArgs e)
@@ -125,7 +126,6 @@ namespace Orchestrate_Project
 
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.HighQuality;
-
 
             for (int i = 1; i < 6; i++)
                 g.DrawLine(Pens.Black, 0, i * staffHght, musicalStaffPanel.Width - 45, i * staffHght);
@@ -431,6 +431,7 @@ namespace Orchestrate_Project
                 else if (rhythmArray[i] == 4)   // if next rhythm is whole note
                     sleepTime = sleepTime * 4;
 
+
                 checkBox.Text = sleepTime.ToString();   // here only for testing
                 switch (noteArray[i])
                 {
@@ -496,6 +497,9 @@ namespace Orchestrate_Project
         private void undoButton_Click(object sender, EventArgs e)
         {
             musicalStaffPanel.Invalidate();
+
+
+
             checkForUndo = 1;
             DrawNotes();
             

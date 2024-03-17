@@ -164,5 +164,17 @@
   <ItemGroup>
     <None Include="Resources\piano-e5.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notes.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NotesTransparent.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musical-notes.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UndoPic.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

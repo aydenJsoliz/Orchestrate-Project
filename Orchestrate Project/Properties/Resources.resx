@@ -118,70 +118,82 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DrawnWholeNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DrawnWholeNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PlayButtonPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PlayButtonPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DrawnQuarterNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DrawnQuarterNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RecordButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RecordButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Treble&amp;Time" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Treble&amp;Time.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NewDrawnHalfNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewDrawnHalfNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DrawnQuarterNote2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DrawnQuarterNote2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DrawnHalfNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DrawnHalfNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NewDrawnQuarterNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewDrawnQuarterNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DrawnQuarterNote1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DrawnQuarterNote1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EigthNotePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EigthNotePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PrinterPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PrinterPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="testStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\testStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="piano_g4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\piano-g4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="piano_e4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\piano-e4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="piano_f4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\piano-f4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="PrinterPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PrinterPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="piano_b4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\piano-b4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NewDrawnHalfNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewDrawnHalfNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\testStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotesTransparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotesTransparent.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="piano_e4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-e4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="piano_d5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\piano-d5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="piano_f5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\piano-f5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notes.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="piano_a4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\piano-a4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="DrawnQuarterNote1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrawnQuarterNote1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RecordButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RecordButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="musical-notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\musical-notes.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="piano_e5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-e5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DrawnWholeNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrawnWholeNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DrawnQuarterNote2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrawnQuarterNote2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="piano_g4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-g4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NewDrawnQuarterNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewDrawnQuarterNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DrawnQuarterNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrawnQuarterNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="piano_c5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\piano-c5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="piano_e5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\piano-e5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PlayButtonPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButtonPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="piano_a4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-a4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_f5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-f5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Treble&amp;Time" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Treble&amp;Time.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EigthNotePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EigthNotePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UndoPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UndoPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
