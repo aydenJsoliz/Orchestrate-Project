@@ -530,7 +530,6 @@ namespace Orchestrate_Project
 
                 count = i + 3;
                 staffButtonCount--;
-                testRedraw.Text = i.ToString();
 
                 if (disableButtonCounter == 4)
                 {

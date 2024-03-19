@@ -34,12 +34,12 @@ namespace Orchestrate_Project
             this.halfRadio = new System.Windows.Forms.RadioButton();
             this.wholeRadio = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.quarterRestRadio = new System.Windows.Forms.RadioButton();
             this.nothingRadio = new System.Windows.Forms.RadioButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.quarterRestRadio = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -51,7 +51,7 @@ namespace Orchestrate_Project
             // 
             this.label1.Font = new System.Drawing.Font("Bodoni MT", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(70, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(788, 51);
             this.label1.TabIndex = 0;
@@ -100,6 +100,17 @@ namespace Orchestrate_Project
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(750, 100);
             this.panel1.TabIndex = 8;
+            // 
+            // quarterRestRadio
+            // 
+            this.quarterRestRadio.AutoSize = true;
+            this.quarterRestRadio.Location = new System.Drawing.Point(472, 21);
+            this.quarterRestRadio.Name = "quarterRestRadio";
+            this.quarterRestRadio.Size = new System.Drawing.Size(111, 21);
+            this.quarterRestRadio.TabIndex = 10;
+            this.quarterRestRadio.TabStop = true;
+            this.quarterRestRadio.Text = "Quarter Rest";
+            this.quarterRestRadio.UseVisualStyleBackColor = true;
             // 
             // nothingRadio
             // 
@@ -152,17 +163,6 @@ namespace Orchestrate_Project
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
-            // 
-            // quarterRestRadio
-            // 
-            this.quarterRestRadio.AutoSize = true;
-            this.quarterRestRadio.Location = new System.Drawing.Point(472, 21);
-            this.quarterRestRadio.Name = "quarterRestRadio";
-            this.quarterRestRadio.Size = new System.Drawing.Size(111, 21);
-            this.quarterRestRadio.TabIndex = 10;
-            this.quarterRestRadio.TabStop = true;
-            this.quarterRestRadio.Text = "Quarter Rest";
-            this.quarterRestRadio.UseVisualStyleBackColor = true;
             // 
             // NoteForm
             // 

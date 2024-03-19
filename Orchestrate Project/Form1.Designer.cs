@@ -49,7 +49,6 @@ namespace Orchestrate_Project
             this.checkBox = new System.Windows.Forms.TextBox();
             this.testLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.testRedraw = new System.Windows.Forms.Label();
             this.musicalStaffPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -268,22 +267,12 @@ namespace Orchestrate_Project
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // testRedraw
-            // 
-            this.testRedraw.AutoSize = true;
-            this.testRedraw.Location = new System.Drawing.Point(260, 13);
-            this.testRedraw.Name = "testRedraw";
-            this.testRedraw.Size = new System.Drawing.Size(46, 17);
-            this.testRedraw.TabIndex = 21;
-            this.testRedraw.Text = "label3";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1065, 802);
-            this.Controls.Add(this.testRedraw);
             this.Controls.Add(this.undoButton);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.checkBox);
@@ -334,7 +323,6 @@ namespace Orchestrate_Project
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.Button undoButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label testRedraw;
     }
 }
 
