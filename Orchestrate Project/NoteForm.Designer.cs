@@ -62,9 +62,10 @@ namespace Orchestrate_Project
             this.quarterRadio.AutoSize = true;
             this.quarterRadio.BackColor = System.Drawing.Color.Transparent;
             this.quarterRadio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.quarterRadio.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quarterRadio.Location = new System.Drawing.Point(19, 21);
             this.quarterRadio.Name = "quarterRadio";
-            this.quarterRadio.Size = new System.Drawing.Size(112, 21);
+            this.quarterRadio.Size = new System.Drawing.Size(123, 25);
             this.quarterRadio.TabIndex = 1;
             this.quarterRadio.Text = "Quarter Note";
             this.quarterRadio.UseVisualStyleBackColor = false;
@@ -72,9 +73,10 @@ namespace Orchestrate_Project
             // halfRadio
             // 
             this.halfRadio.AutoSize = true;
+            this.halfRadio.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.halfRadio.Location = new System.Drawing.Point(166, 21);
             this.halfRadio.Name = "halfRadio";
-            this.halfRadio.Size = new System.Drawing.Size(88, 21);
+            this.halfRadio.Size = new System.Drawing.Size(101, 25);
             this.halfRadio.TabIndex = 3;
             this.halfRadio.Text = "Half Note";
             this.halfRadio.UseVisualStyleBackColor = true;
@@ -82,9 +84,10 @@ namespace Orchestrate_Project
             // wholeRadio
             // 
             this.wholeRadio.AutoSize = true;
+            this.wholeRadio.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wholeRadio.Location = new System.Drawing.Point(316, 21);
             this.wholeRadio.Name = "wholeRadio";
-            this.wholeRadio.Size = new System.Drawing.Size(103, 21);
+            this.wholeRadio.Size = new System.Drawing.Size(113, 25);
             this.wholeRadio.TabIndex = 5;
             this.wholeRadio.Text = "Whole Note";
             this.wholeRadio.UseVisualStyleBackColor = true;
@@ -104,9 +107,10 @@ namespace Orchestrate_Project
             // quarterRestRadio
             // 
             this.quarterRestRadio.AutoSize = true;
+            this.quarterRestRadio.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quarterRestRadio.Location = new System.Drawing.Point(472, 21);
             this.quarterRestRadio.Name = "quarterRestRadio";
-            this.quarterRestRadio.Size = new System.Drawing.Size(111, 21);
+            this.quarterRestRadio.Size = new System.Drawing.Size(121, 25);
             this.quarterRestRadio.TabIndex = 10;
             this.quarterRestRadio.TabStop = true;
             this.quarterRestRadio.Text = "Quarter Rest";
@@ -116,9 +120,10 @@ namespace Orchestrate_Project
             // 
             this.nothingRadio.AutoSize = true;
             this.nothingRadio.Checked = true;
+            this.nothingRadio.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nothingRadio.Location = new System.Drawing.Point(645, 21);
             this.nothingRadio.Name = "nothingRadio";
-            this.nothingRadio.Size = new System.Drawing.Size(78, 21);
+            this.nothingRadio.Size = new System.Drawing.Size(88, 25);
             this.nothingRadio.TabIndex = 9;
             this.nothingRadio.TabStop = true;
             this.nothingRadio.Text = "Nothing";
@@ -176,6 +181,7 @@ namespace Orchestrate_Project
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "NoteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

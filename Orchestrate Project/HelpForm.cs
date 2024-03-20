@@ -16,5 +16,28 @@ namespace Orchestrate_Project
         {
             InitializeComponent();
         }
+
+        private void changeVisiblePanel(Control container)
+        {
+            if(defaultPanel.Visible == true)
+            {
+                defaultPanel.Visible = false;
+            }
+        }
+
+        private void option1_CheckedChanged(object sender, EventArgs e)
+        {
+            changeVisiblePanel(panel1);
+        }
+
+        private void option2_CheckedChanged(object sender, EventArgs e)
+        {
+            changeVisiblePanel(panel1);
+        }
+
+        private void option3_CheckedChanged(object sender, EventArgs e)
+        {
+            changeVisiblePanel(panel1); 
+        }
     }
 }
