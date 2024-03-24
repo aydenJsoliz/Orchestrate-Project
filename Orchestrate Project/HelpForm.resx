@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="option2Label1.Text" xml:space="preserve">
+    <value>Tempo means the given speed of the music.
+It is measured by beats per minute, so a tempo of 60 is
+a beat every second. When you play your music, you will
+notice the speed alter based on your tempo setting.
+
+When setting the tempo, make sure it is between 60 - 120.
+If not, it will set itself to 60 automatically. </value>
+  </data>
 </root>

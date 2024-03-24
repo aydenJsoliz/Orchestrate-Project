@@ -182,5 +182,11 @@
   <ItemGroup>
     <None Include="Resources\DrawnQuarterRest.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RhythmSelectionExample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TempoBoxExample.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

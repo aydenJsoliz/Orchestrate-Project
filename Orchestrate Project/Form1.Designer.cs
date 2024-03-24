@@ -40,14 +40,14 @@ namespace Orchestrate_Project
             this.button1 = new System.Windows.Forms.Button();
             this.newMusicLineButton = new System.Windows.Forms.Button();
             this.musicalStaffPanel = new System.Windows.Forms.Panel();
-            this.trebleAndTime = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBox = new System.Windows.Forms.TextBox();
+            this.testLabel = new System.Windows.Forms.Label();
             this.undoButton = new System.Windows.Forms.Button();
+            this.trebleAndTime = new System.Windows.Forms.PictureBox();
             this.playButton = new System.Windows.Forms.Button();
             this.notePopupButton = new System.Windows.Forms.Button();
             this.printButton = new System.Windows.Forms.Button();
-            this.checkBox = new System.Windows.Forms.TextBox();
-            this.testLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.musicalStaffPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).BeginInit();
@@ -122,18 +122,21 @@ namespace Orchestrate_Project
             // radioLabel
             // 
             this.radioLabel.AutoSize = true;
+            this.radioLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.radioLabel.Font = new System.Drawing.Font("Bodoni MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioLabel.Location = new System.Drawing.Point(175, 169);
             this.radioLabel.Name = "radioLabel";
             this.radioLabel.Size = new System.Drawing.Size(15, 23);
             this.radioLabel.TabIndex = 12;
             this.radioLabel.Text = " ";
+            this.radioLabel.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Font = new System.Drawing.Font("Bodoni MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 168);
+            this.label1.Location = new System.Drawing.Point(36, 173);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 18);
             this.label1.TabIndex = 15;
@@ -176,17 +179,23 @@ namespace Orchestrate_Project
             this.musicalStaffPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.musicalStaffPanel_Paint);
             this.musicalStaffPanel.MouseLeave += new System.EventHandler(this.musicalStaffPanel_MouseLeave);
             // 
-            // trebleAndTime
+            // checkBox
             // 
-            this.trebleAndTime.BackColor = System.Drawing.Color.Transparent;
-            this.trebleAndTime.Cursor = System.Windows.Forms.Cursors.No;
-            this.trebleAndTime.Image = global::Orchestrate_Project.Properties.Resources.Treble_Time;
-            this.trebleAndTime.Location = new System.Drawing.Point(-34, -12);
-            this.trebleAndTime.Name = "trebleAndTime";
-            this.trebleAndTime.Size = new System.Drawing.Size(191, 126);
-            this.trebleAndTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.trebleAndTime.TabIndex = 0;
-            this.trebleAndTime.TabStop = false;
+            this.checkBox.Location = new System.Drawing.Point(76, 12);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(100, 22);
+            this.checkBox.TabIndex = 17;
+            this.checkBox.Visible = false;
+            // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(183, 15);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(46, 17);
+            this.testLabel.TabIndex = 18;
+            this.testLabel.Text = "label2";
+            this.testLabel.Visible = false;
             // 
             // undoButton
             // 
@@ -199,6 +208,18 @@ namespace Orchestrate_Project
             this.toolTip1.SetToolTip(this.undoButton, "Undo Note");
             this.undoButton.UseVisualStyleBackColor = true;
             this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
+            // 
+            // trebleAndTime
+            // 
+            this.trebleAndTime.BackColor = System.Drawing.Color.Transparent;
+            this.trebleAndTime.Cursor = System.Windows.Forms.Cursors.No;
+            this.trebleAndTime.Image = global::Orchestrate_Project.Properties.Resources.Treble_Time;
+            this.trebleAndTime.Location = new System.Drawing.Point(-34, -12);
+            this.trebleAndTime.Name = "trebleAndTime";
+            this.trebleAndTime.Size = new System.Drawing.Size(191, 126);
+            this.trebleAndTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.trebleAndTime.TabIndex = 0;
+            this.trebleAndTime.TabStop = false;
             // 
             // playButton
             // 
@@ -241,26 +262,10 @@ namespace Orchestrate_Project
             this.printButton.UseVisualStyleBackColor = false;
             this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
-            // checkBox
-            // 
-            this.checkBox.Location = new System.Drawing.Point(76, 12);
-            this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(100, 22);
-            this.checkBox.TabIndex = 17;
-            // 
-            // testLabel
-            // 
-            this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(183, 15);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(46, 17);
-            this.testLabel.TabIndex = 18;
-            this.testLabel.Text = "label2";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Orchestrate_Project.Properties.Resources.musical_notes;
-            this.pictureBox1.Location = new System.Drawing.Point(215, 66);
+            this.pictureBox1.Location = new System.Drawing.Point(215, 60);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(727, 120);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -52,6 +52,8 @@ namespace Orchestrate_Project
         public void GetNoteSelection(string rhythm)
         {
             rhythmResults = rhythm;
+            radioLabel.BorderStyle = BorderStyle.FixedSingle;
+            radioLabel.Visible = true;
             switch (rhythmResults)
             {
                 case "quarterRadio":
