@@ -121,20 +121,23 @@
   <data name="DrawnQuarterNote1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DrawnQuarterNote1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RhythmSelectionExample" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RhythmSelectionExample.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="piano_b4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\piano-b4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="DrawnQuarterRest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DrawnQuarterRest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NewDrawnQuarterNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewDrawnQuarterNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NotesTransparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotesTransparent.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TempoBoxExample" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TempoBoxExample.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="musical-notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\musical-notes.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +148,8 @@
   <data name="QuarterRest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QuarterRest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="testStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\testStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RhythmSelectionExample" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RhythmSelectionExample.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EigthNotePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EigthNotePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,17 +160,29 @@
   <data name="piano_f4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\piano-f4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="trashIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trashIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="piano_e5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\piano-e5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="DrawnHalfNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DrawnHalfNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ArrowPointing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArrowPointing.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ArrowPointingNEW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArrowPointingNEW.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DrawnQuarterNote2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DrawnQuarterNote2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PrinterPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PrinterPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\testStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ArrowPointing-rotated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArrowPointing-rotated.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PlayButtonPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlayButtonPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -177,6 +192,9 @@
   </data>
   <data name="piano_c5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\piano-c5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="piano_f5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piano-f5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="NewDrawnHalfNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewDrawnHalfNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +211,8 @@
   <data name="Notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Notes.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="piano_f5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\piano-f5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="DrawnHalfNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrawnHalfNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="piano_d5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\piano-d5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -205,7 +223,7 @@
   <data name="UndoPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UndoPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TempoBoxExample" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TempoBoxExample.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DrawnDottedHalfNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrawnDottedHalfNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

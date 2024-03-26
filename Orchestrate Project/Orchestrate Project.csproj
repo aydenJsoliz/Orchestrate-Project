@@ -188,5 +188,23 @@
   <ItemGroup>
     <None Include="Resources\TempoBoxExample.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trashIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowPointing.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowPointingNEW.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowPointing-rotated.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DrawnDottedHalfNote.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

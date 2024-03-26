@@ -43,6 +43,9 @@ namespace Orchestrate_Project
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.checkBox = new System.Windows.Forms.TextBox();
             this.testLabel = new System.Windows.Forms.Label();
+            this.defaultLabel = new System.Windows.Forms.Label();
+            this.defaultPicture = new System.Windows.Forms.PictureBox();
+            this.deleteAllButton = new System.Windows.Forms.Button();
             this.undoButton = new System.Windows.Forms.Button();
             this.trebleAndTime = new System.Windows.Forms.PictureBox();
             this.playButton = new System.Windows.Forms.Button();
@@ -50,6 +53,7 @@ namespace Orchestrate_Project
             this.printButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.musicalStaffPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defaultPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +114,7 @@ namespace Orchestrate_Project
             // helpButton
             // 
             this.helpButton.Font = new System.Drawing.Font("Bodoni MT", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpButton.Location = new System.Drawing.Point(1004, 71);
+            this.helpButton.Location = new System.Drawing.Point(1004, 55);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(40, 55);
             this.helpButton.TabIndex = 9;
@@ -197,13 +201,47 @@ namespace Orchestrate_Project
             this.testLabel.Text = "label2";
             this.testLabel.Visible = false;
             // 
+            // defaultLabel
+            // 
+            this.defaultLabel.AutoSize = true;
+            this.defaultLabel.BackColor = System.Drawing.Color.White;
+            this.defaultLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.defaultLabel.Font = new System.Drawing.Font("Bodoni MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.defaultLabel.Location = new System.Drawing.Point(1, 12);
+            this.defaultLabel.Name = "defaultLabel";
+            this.defaultLabel.Size = new System.Drawing.Size(162, 60);
+            this.defaultLabel.TabIndex = 22;
+            this.defaultLabel.Text = "Begin by \r\nclicking here !!\r\n";
+            // 
+            // defaultPicture
+            // 
+            this.defaultPicture.Image = global::Orchestrate_Project.Properties.Resources.ArrowPointing_rotated;
+            this.defaultPicture.Location = new System.Drawing.Point(169, 22);
+            this.defaultPicture.Name = "defaultPicture";
+            this.defaultPicture.Size = new System.Drawing.Size(74, 86);
+            this.defaultPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.defaultPicture.TabIndex = 23;
+            this.defaultPicture.TabStop = false;
+            // 
+            // deleteAllButton
+            // 
+            this.deleteAllButton.BackgroundImage = global::Orchestrate_Project.Properties.Resources.trashIcon;
+            this.deleteAllButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deleteAllButton.Location = new System.Drawing.Point(866, 154);
+            this.deleteAllButton.Name = "deleteAllButton";
+            this.deleteAllButton.Size = new System.Drawing.Size(46, 38);
+            this.deleteAllButton.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.deleteAllButton, "Delete All Notes");
+            this.deleteAllButton.UseVisualStyleBackColor = true;
+            this.deleteAllButton.Click += new System.EventHandler(this.deleteAllButton_Click);
+            // 
             // undoButton
             // 
             this.undoButton.BackgroundImage = global::Orchestrate_Project.Properties.Resources.UndoPic;
             this.undoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.undoButton.Location = new System.Drawing.Point(840, 132);
+            this.undoButton.Location = new System.Drawing.Point(814, 154);
             this.undoButton.Name = "undoButton";
-            this.undoButton.Size = new System.Drawing.Size(69, 60);
+            this.undoButton.Size = new System.Drawing.Size(46, 38);
             this.undoButton.TabIndex = 19;
             this.toolTip1.SetToolTip(this.undoButton, "Undo Note");
             this.undoButton.UseVisualStyleBackColor = true;
@@ -223,11 +261,13 @@ namespace Orchestrate_Project
             // 
             // playButton
             // 
+            this.playButton.BackColor = System.Drawing.Color.LightGray;
             this.playButton.BackgroundImage = global::Orchestrate_Project.Properties.Resources.PlayButtonPic;
-            this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.playButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.playButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
             this.playButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.playButton.Location = new System.Drawing.Point(915, 132);
+            this.playButton.Location = new System.Drawing.Point(934, 132);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(69, 60);
             this.playButton.TabIndex = 7;
@@ -276,8 +316,11 @@ namespace Orchestrate_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1065, 802);
+            this.Controls.Add(this.defaultPicture);
+            this.Controls.Add(this.defaultLabel);
+            this.Controls.Add(this.deleteAllButton);
             this.Controls.Add(this.undoButton);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.checkBox);
@@ -300,6 +343,7 @@ namespace Orchestrate_Project
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orchestrate";
             this.musicalStaffPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.defaultPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -328,6 +372,9 @@ namespace Orchestrate_Project
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.Button undoButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button deleteAllButton;
+        private System.Windows.Forms.Label defaultLabel;
+        private System.Windows.Forms.PictureBox defaultPicture;
     }
 }
 

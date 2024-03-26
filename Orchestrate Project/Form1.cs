@@ -45,6 +45,9 @@ namespace Orchestrate_Project
 
         private void notePopupButton_Click(object sender, EventArgs e)
         {
+            defaultLabel.Visible = false;
+            defaultPicture.Visible = false;
+
             NoteForm nf = new NoteForm();
             nf.Show();
         }
@@ -64,6 +67,9 @@ namespace Orchestrate_Project
                     break;
                 case "wholeRadio":
                     radioLabel.Text = "Selected: Whole Note";
+                    break;
+                case "dottedHalfRadio":
+                    radioLabel.Text = "Selected: Dotted Half Note";
                     break;
                 case "quarterRestRadio":
                     radioLabel.Text = "Selected: Quarter Rest";
@@ -222,6 +228,11 @@ namespace Orchestrate_Project
                                 Resources.NewDrawnHalfNote), 250, 120);
                             redraw.DrawImage(halfNote, pointArray[i]);
                             break;
+                        case 3:
+                            Bitmap dottedHalfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                            Resources.DrawnDottedHalfNote), 57, 55);
+                            redraw.DrawImage(dottedHalfNote, pointArray[i]);
+                            break;
                         case 4:
                             Bitmap wholeNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
                                 Resources.DrawnWholeNote), 45, 70);
@@ -247,6 +258,7 @@ namespace Orchestrate_Project
                     counterPointArray--;
                     counterRhythmArray--;
 
+                    // to make sure nothing gets played
                     noteArray[counterNoteArray] = null;
                 }
 
@@ -380,6 +392,15 @@ namespace Orchestrate_Project
                     rhythmArray[counterRhythmArray] = 2;
                     pointArray[counterPointArray] = mouseCoord;
                     break;
+                case "dottedHalfRadio":
+                        Bitmap dottedHalfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.DrawnDottedHalfNote), 57, 55);
+                    mouseCoord.X = mouseCoord.X - 35;
+                    mouseCoord.Y = mouseCoord.Y - 35;
+                    mgr.DrawImage(dottedHalfNote, mouseCoord);
+                    rhythmArray[counterRhythmArray] = 3;
+                    pointArray[counterPointArray] = mouseCoord;
+                    break;
                 case "wholeRadio":
                     Bitmap wholeNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
                         Resources.DrawnWholeNote), 45, 70);
@@ -420,12 +441,20 @@ namespace Orchestrate_Project
             
             int i = 0; // index for arrays
 
-            do
+            if(noteArray[i] == null)
+            {
+                System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
+                        "not been placed yet !!");
+            }
+
+            while (noteArray[i] != null) 
             {
                 int sleepTime = (int)((60.0 / tempo) * 1000);
 
                 if (rhythmArray[i] == 2)        // if next rhythm is half note
                     sleepTime = sleepTime * 2;
+                else if (rhythmArray[i] == 3)   // if next rhythm is dotted half note
+                    sleepTime = sleepTime * 3;  
                 else if (rhythmArray[i] == 4)   // if next rhythm is whole note
                     sleepTime = sleepTime * 4;
 
@@ -490,15 +519,14 @@ namespace Orchestrate_Project
                 Thread.Sleep(sleepTime);
                 i++;
             }
-            while (noteArray[i] != null);
+            //while (noteArray[i] != null);
 
         }
         // -------------------------------------------------------------------------------------
 
-        // Function for Undo Button ------------------------------------------------------------
+        // Functions for undo or delete notes --------------------------------------------------
         private void undoButton_Click(object sender, EventArgs e)
         {
-            // musicalStaffPanel.Invalidate();
             musicalStaffPanel.Refresh();
 
             // these functions redraw the staff lines that get erased on Refresh, and all the
@@ -551,5 +579,34 @@ namespace Orchestrate_Project
 
             draw.Dispose();
         }
+
+        private void deleteAllButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dlgResult = MessageBox.Show("Are you sure you want to delete all placed notes ?",
+                "??", MessageBoxButtons.YesNo);
+
+            for(int i = 0; i <= counterNoteArray; i++)
+            {
+                noteArray[i] = null;
+            }
+
+           if(dlgResult == DialogResult.Yes)
+            { 
+
+            musicalStaffPanel.Refresh();
+
+            // these functions redraw the staff lines that get erased on Refresh
+            RedrawLines();
+
+            // resets all the array counters to start from the beginning
+            counterNoteArray = 0;
+            counterPointArray = 0;
+            counterRhythmArray = 0;
+
+            // to make sure nothing gets played
+            noteArray[counterNoteArray] = null;
+            }
+        }
+
     }
 }

@@ -47,7 +47,5 @@ namespace Orchestrate_Project
             mainForm.GetNoteSelection(radioName);
             return null;
         }
-
-       
     }
 }

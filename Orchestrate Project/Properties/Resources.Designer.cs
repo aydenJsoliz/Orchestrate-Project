@@ -63,6 +63,56 @@ namespace Orchestrate_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow {
+            get {
+                object obj = ResourceManager.GetObject("arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ArrowPointing {
+            get {
+                object obj = ResourceManager.GetObject("ArrowPointing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ArrowPointing_rotated {
+            get {
+                object obj = ResourceManager.GetObject("ArrowPointing-rotated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ArrowPointingNEW {
+            get {
+                object obj = ResourceManager.GetObject("ArrowPointingNEW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DrawnDottedHalfNote {
+            get {
+                object obj = ResourceManager.GetObject("DrawnDottedHalfNote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DrawnHalfNote {
             get {
                 object obj = ResourceManager.GetObject("DrawnHalfNote", resourceCulture);
@@ -327,6 +377,16 @@ namespace Orchestrate_Project.Properties {
         internal static System.Drawing.Bitmap testStaff {
             get {
                 object obj = ResourceManager.GetObject("testStaff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trashIcon {
+            get {
+                object obj = ResourceManager.GetObject("trashIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
