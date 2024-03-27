@@ -584,19 +584,20 @@ namespace Orchestrate_Project
         {
             DialogResult dlgResult = MessageBox.Show("Are you sure you want to delete all placed notes ?",
                 "??", MessageBoxButtons.YesNo);
-
-            for(int i = 0; i <= counterNoteArray; i++)
-            {
-                noteArray[i] = null;
-            }
+            
 
            if(dlgResult == DialogResult.Yes)
             { 
 
             musicalStaffPanel.Refresh();
 
-            // these functions redraw the staff lines that get erased on Refresh
-            RedrawLines();
+            for (int i = 0; i <= counterNoteArray; i++)
+            {
+                noteArray[i] = null;
+            }
+
+                // these functions redraw the staff lines that get erased on Refresh
+                RedrawLines();
 
             // resets all the array counters to start from the beginning
             counterNoteArray = 0;
@@ -606,6 +607,7 @@ namespace Orchestrate_Project
             // to make sure nothing gets played
             noteArray[counterNoteArray] = null;
             }
+
         }
 
     }
