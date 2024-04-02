@@ -42,6 +42,12 @@ namespace Orchestrate_Project
                 case "option1":
                     option2Label1.Visible = false;
                     option2Picture1.Visible = false;
+                    option3Label1.Visible = false;
+                    option3Picture1.Visible = false;
+                    option3Picture2.Visible = false;
+                    option3Picture3.Visible = false;
+
+                    // the controls to be shown
                     option1Label1.Visible = true;
                     option1Picture1.Visible = true;
                     option1Label2.Visible = true;
@@ -52,8 +58,28 @@ namespace Orchestrate_Project
                     option1Picture1.Visible = false;
                     option1Label2.Visible = false;
                     option1Picture2.Visible = false;
+                    option3Label1.Visible = false;
+                    option3Picture1.Visible = false;
+                    option3Picture2.Visible = false;
+                    option3Picture3.Visible = false;
+
+                    // the controls to be shown
                     option2Label1.Visible = true;
                     option2Picture1.Visible = true;
+                    break;
+                case "option3":
+                    option1Label1.Visible = false;
+                    option1Picture1.Visible = false;
+                    option1Label2.Visible = false;
+                    option1Picture2.Visible = false;
+                    option2Label1.Visible = false;
+                    option2Picture1.Visible = false;
+
+                    // the controls to be shown
+                    option3Label1.Visible = true;
+                    option3Picture1.Visible = true;
+                    option3Picture2.Visible = true;
+                    option3Picture3.Visible = true;
                     break;
                 default:
                     break;

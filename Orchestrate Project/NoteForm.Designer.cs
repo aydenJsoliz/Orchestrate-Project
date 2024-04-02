@@ -34,6 +34,7 @@ namespace Orchestrate_Project
             this.halfRadio = new System.Windows.Forms.RadioButton();
             this.wholeRadio = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dottedHalfRadio = new System.Windows.Forms.RadioButton();
             this.quarterRestRadio = new System.Windows.Forms.RadioButton();
             this.nothingRadio = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@ namespace Orchestrate_Project
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dottedHalfRadio = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -108,6 +108,18 @@ namespace Orchestrate_Project
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(887, 67);
             this.panel1.TabIndex = 8;
+            // 
+            // dottedHalfRadio
+            // 
+            this.dottedHalfRadio.AutoSize = true;
+            this.dottedHalfRadio.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dottedHalfRadio.Location = new System.Drawing.Point(304, 21);
+            this.dottedHalfRadio.Name = "dottedHalfRadio";
+            this.dottedHalfRadio.Size = new System.Drawing.Size(154, 25);
+            this.dottedHalfRadio.TabIndex = 11;
+            this.dottedHalfRadio.TabStop = true;
+            this.dottedHalfRadio.Text = "Dotted Half Note";
+            this.dottedHalfRadio.UseVisualStyleBackColor = true;
             // 
             // quarterRestRadio
             // 
@@ -197,23 +209,11 @@ namespace Orchestrate_Project
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // dottedHalfRadio
-            // 
-            this.dottedHalfRadio.AutoSize = true;
-            this.dottedHalfRadio.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dottedHalfRadio.Location = new System.Drawing.Point(304, 21);
-            this.dottedHalfRadio.Name = "dottedHalfRadio";
-            this.dottedHalfRadio.Size = new System.Drawing.Size(154, 25);
-            this.dottedHalfRadio.TabIndex = 11;
-            this.dottedHalfRadio.TabStop = true;
-            this.dottedHalfRadio.Text = "Dotted Half Note";
-            this.dottedHalfRadio.UseVisualStyleBackColor = true;
-            // 
             // NoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(967, 450);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label2);
