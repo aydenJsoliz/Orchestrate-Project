@@ -23,6 +23,10 @@ namespace Orchestrate_Project
         int counterPointArray = 0;              // counter to update Point array
         int checkForUndo = 0;                   // used to make undo function work
 
+        // Declare the PrintDocument object.
+        private System.Drawing.Printing.PrintDocument docToPrint =
+            new System.Drawing.Printing.PrintDocument();
+
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();   // used to play audio
 
         public Form1()
@@ -30,12 +34,6 @@ namespace Orchestrate_Project
             InitializeComponent();
             // nf = new NoteForm(); //this
 
-        }
-
-        private void printButton_Click(object sender, EventArgs e)
-        {
-            var dlg = new PrintDialog();
-            dlg.ShowDialog();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -609,6 +607,73 @@ namespace Orchestrate_Project
             }
 
         }
+        // -------------------------------------------------------------------------------------
 
+        // Functions For Printing Page ---------------------------------------------------------
+
+        private void printButton_Click(object sender, EventArgs e)
+        {
+
+            PrintDialog pd = new PrintDialog();
+            pd.Document = printDocument1;
+
+            DialogResult result = pd.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                printDocument1.Print(); 
+            }
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // painting musical staff panel and all the notes for the PDF
+            Bitmap musicalStaff = new Bitmap(musicalStaffPanel.Width, musicalStaffPanel.Height);
+            musicalStaffPanel.DrawToBitmap(musicalStaff, new Rectangle(0, 0, musicalStaffPanel.Width, musicalStaffPanel.Height));
+
+            e.Graphics.DrawImage(musicalStaff, 0, 0);
+
+            int i = 0;
+            while (noteArray[i] != null)
+            {
+                switch (rhythmArray[i])
+                {
+                    case 1:
+                        Bitmap quarterNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                            Resources.NewDrawnQuarterNote), 60, 110);
+                        e.Graphics.DrawImage(quarterNote, pointArray[i]);
+                        break;
+                    case 2:
+                        Bitmap halfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                            Resources.NewDrawnHalfNote), 250, 120);
+                        e.Graphics.DrawImage(halfNote, pointArray[i]);
+                        break;
+                    case 3:
+                        Bitmap dottedHalfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                        Resources.DrawnDottedHalfNote), 57, 55);
+                        e.Graphics.DrawImage(dottedHalfNote, pointArray[i]);
+                        break;
+                    case 4:
+                        Bitmap wholeNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                            Resources.DrawnWholeNote), 45, 70);
+                        e.Graphics.DrawImage(wholeNote, pointArray[i]);
+                        break;
+                    case 5:
+                        Bitmap quarterRest = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
+                            Resources.DrawnQuarterRest), 45, 70);
+                        e.Graphics.DrawImage(quarterRest, pointArray[i]);
+                        break;
+                    default:
+                        System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
+                        "not been placed yet !!");
+                        break;
+                }
+
+                i++;
+            }
+
+
+        }
     }
 }

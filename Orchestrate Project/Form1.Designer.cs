@@ -30,6 +30,7 @@ namespace Orchestrate_Project
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.exitButton = new System.Windows.Forms.Button();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.tempoLabel = new System.Windows.Forms.Label();
@@ -40,21 +41,24 @@ namespace Orchestrate_Project
             this.button1 = new System.Windows.Forms.Button();
             this.newMusicLineButton = new System.Windows.Forms.Button();
             this.musicalStaffPanel = new System.Windows.Forms.Panel();
+            this.trebleAndTime = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.deleteAllButton = new System.Windows.Forms.Button();
+            this.undoButton = new System.Windows.Forms.Button();
+            this.playButton = new System.Windows.Forms.Button();
+            this.notePopupButton = new System.Windows.Forms.Button();
+            this.printButton = new System.Windows.Forms.Button();
             this.checkBox = new System.Windows.Forms.TextBox();
             this.testLabel = new System.Windows.Forms.Label();
             this.defaultLabel = new System.Windows.Forms.Label();
             this.defaultPicture = new System.Windows.Forms.PictureBox();
-            this.deleteAllButton = new System.Windows.Forms.Button();
-            this.undoButton = new System.Windows.Forms.Button();
-            this.trebleAndTime = new System.Windows.Forms.PictureBox();
-            this.playButton = new System.Windows.Forms.Button();
-            this.notePopupButton = new System.Windows.Forms.Button();
-            this.printButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.musicalStaffPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.defaultPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defaultPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,45 +187,17 @@ namespace Orchestrate_Project
             this.musicalStaffPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.musicalStaffPanel_Paint);
             this.musicalStaffPanel.MouseLeave += new System.EventHandler(this.musicalStaffPanel_MouseLeave);
             // 
-            // checkBox
+            // trebleAndTime
             // 
-            this.checkBox.Location = new System.Drawing.Point(76, 12);
-            this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(100, 22);
-            this.checkBox.TabIndex = 17;
-            this.checkBox.Visible = false;
-            // 
-            // testLabel
-            // 
-            this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(183, 15);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(46, 17);
-            this.testLabel.TabIndex = 18;
-            this.testLabel.Text = "label2";
-            this.testLabel.Visible = false;
-            // 
-            // defaultLabel
-            // 
-            this.defaultLabel.AutoSize = true;
-            this.defaultLabel.BackColor = System.Drawing.Color.White;
-            this.defaultLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.defaultLabel.Font = new System.Drawing.Font("Bodoni MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.defaultLabel.Location = new System.Drawing.Point(1, 12);
-            this.defaultLabel.Name = "defaultLabel";
-            this.defaultLabel.Size = new System.Drawing.Size(162, 60);
-            this.defaultLabel.TabIndex = 22;
-            this.defaultLabel.Text = "Begin by \r\nclicking here !!\r\n";
-            // 
-            // defaultPicture
-            // 
-            this.defaultPicture.Image = global::Orchestrate_Project.Properties.Resources.ArrowPointing_rotated;
-            this.defaultPicture.Location = new System.Drawing.Point(169, 22);
-            this.defaultPicture.Name = "defaultPicture";
-            this.defaultPicture.Size = new System.Drawing.Size(74, 86);
-            this.defaultPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.defaultPicture.TabIndex = 23;
-            this.defaultPicture.TabStop = false;
+            this.trebleAndTime.BackColor = System.Drawing.Color.Transparent;
+            this.trebleAndTime.Cursor = System.Windows.Forms.Cursors.No;
+            this.trebleAndTime.Image = global::Orchestrate_Project.Properties.Resources.Treble_Time;
+            this.trebleAndTime.Location = new System.Drawing.Point(-34, -12);
+            this.trebleAndTime.Name = "trebleAndTime";
+            this.trebleAndTime.Size = new System.Drawing.Size(191, 126);
+            this.trebleAndTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.trebleAndTime.TabIndex = 0;
+            this.trebleAndTime.TabStop = false;
             // 
             // deleteAllButton
             // 
@@ -246,18 +222,6 @@ namespace Orchestrate_Project
             this.toolTip1.SetToolTip(this.undoButton, "Undo Note");
             this.undoButton.UseVisualStyleBackColor = true;
             this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
-            // 
-            // trebleAndTime
-            // 
-            this.trebleAndTime.BackColor = System.Drawing.Color.Transparent;
-            this.trebleAndTime.Cursor = System.Windows.Forms.Cursors.No;
-            this.trebleAndTime.Image = global::Orchestrate_Project.Properties.Resources.Treble_Time;
-            this.trebleAndTime.Location = new System.Drawing.Point(-34, -12);
-            this.trebleAndTime.Name = "trebleAndTime";
-            this.trebleAndTime.Size = new System.Drawing.Size(191, 126);
-            this.trebleAndTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.trebleAndTime.TabIndex = 0;
-            this.trebleAndTime.TabStop = false;
             // 
             // playButton
             // 
@@ -302,6 +266,46 @@ namespace Orchestrate_Project
             this.printButton.UseVisualStyleBackColor = false;
             this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
+            // checkBox
+            // 
+            this.checkBox.Location = new System.Drawing.Point(76, 12);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(100, 22);
+            this.checkBox.TabIndex = 17;
+            this.checkBox.Visible = false;
+            // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(183, 15);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(46, 17);
+            this.testLabel.TabIndex = 18;
+            this.testLabel.Text = "label2";
+            this.testLabel.Visible = false;
+            // 
+            // defaultLabel
+            // 
+            this.defaultLabel.AutoSize = true;
+            this.defaultLabel.BackColor = System.Drawing.Color.White;
+            this.defaultLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.defaultLabel.Font = new System.Drawing.Font("Bodoni MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.defaultLabel.Location = new System.Drawing.Point(1, 12);
+            this.defaultLabel.Name = "defaultLabel";
+            this.defaultLabel.Size = new System.Drawing.Size(162, 60);
+            this.defaultLabel.TabIndex = 22;
+            this.defaultLabel.Text = "Begin by \r\nclicking here !!\r\n";
+            // 
+            // defaultPicture
+            // 
+            this.defaultPicture.Image = global::Orchestrate_Project.Properties.Resources.ArrowPointing_rotated;
+            this.defaultPicture.Location = new System.Drawing.Point(169, 22);
+            this.defaultPicture.Name = "defaultPicture";
+            this.defaultPicture.Size = new System.Drawing.Size(74, 86);
+            this.defaultPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.defaultPicture.TabIndex = 23;
+            this.defaultPicture.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Orchestrate_Project.Properties.Resources.musical_notes;
@@ -311,6 +315,24 @@ namespace Orchestrate_Project
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Form1
             // 
@@ -343,8 +365,8 @@ namespace Orchestrate_Project
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orchestrate";
             this.musicalStaffPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.defaultPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trebleAndTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defaultPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -375,6 +397,9 @@ namespace Orchestrate_Project
         private System.Windows.Forms.Button deleteAllButton;
         private System.Windows.Forms.Label defaultLabel;
         private System.Windows.Forms.PictureBox defaultPicture;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
 
