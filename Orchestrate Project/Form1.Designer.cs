@@ -219,7 +219,7 @@ namespace Orchestrate_Project
             this.undoButton.Name = "undoButton";
             this.undoButton.Size = new System.Drawing.Size(46, 38);
             this.undoButton.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.undoButton, "Undo Note");
+            this.toolTip1.SetToolTip(this.undoButton, "Undo Note/Redraw Staff");
             this.undoButton.UseVisualStyleBackColor = true;
             this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
             // 

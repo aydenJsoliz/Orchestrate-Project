@@ -39,6 +39,10 @@ namespace Orchestrate_Project
             this.option2 = new System.Windows.Forms.RadioButton();
             this.option1 = new System.Windows.Forms.RadioButton();
             this.defaultPanel = new System.Windows.Forms.Panel();
+            this.option3Picture3 = new System.Windows.Forms.PictureBox();
+            this.option3Picture2 = new System.Windows.Forms.PictureBox();
+            this.option3Picture1 = new System.Windows.Forms.PictureBox();
+            this.option3Label1 = new System.Windows.Forms.Label();
             this.option2Label1 = new System.Windows.Forms.Label();
             this.option2Picture1 = new System.Windows.Forms.PictureBox();
             this.option1Picture2 = new System.Windows.Forms.PictureBox();
@@ -48,20 +52,16 @@ namespace Orchestrate_Project
             this.defaultLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.option3Label1 = new System.Windows.Forms.Label();
-            this.option3Picture1 = new System.Windows.Forms.PictureBox();
-            this.option3Picture2 = new System.Windows.Forms.PictureBox();
-            this.option3Picture3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.defaultPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.option3Picture3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.option3Picture2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.option3Picture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option2Picture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option1Picture2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option1Picture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.option3Picture1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.option3Picture2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.option3Picture3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -176,6 +176,53 @@ namespace Orchestrate_Project
             this.defaultPanel.Size = new System.Drawing.Size(599, 295);
             this.defaultPanel.TabIndex = 6;
             // 
+            // option3Picture3
+            // 
+            this.option3Picture3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.option3Picture3.Image = global::Orchestrate_Project.Properties.Resources.trashIcon;
+            this.option3Picture3.Location = new System.Drawing.Point(495, 237);
+            this.option3Picture3.Name = "option3Picture3";
+            this.option3Picture3.Size = new System.Drawing.Size(51, 44);
+            this.option3Picture3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.option3Picture3.TabIndex = 10;
+            this.option3Picture3.TabStop = false;
+            this.option3Picture3.Visible = false;
+            // 
+            // option3Picture2
+            // 
+            this.option3Picture2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.option3Picture2.Image = global::Orchestrate_Project.Properties.Resources.UndoPic;
+            this.option3Picture2.Location = new System.Drawing.Point(495, 158);
+            this.option3Picture2.Name = "option3Picture2";
+            this.option3Picture2.Size = new System.Drawing.Size(51, 49);
+            this.option3Picture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.option3Picture2.TabIndex = 9;
+            this.option3Picture2.TabStop = false;
+            this.option3Picture2.Visible = false;
+            // 
+            // option3Picture1
+            // 
+            this.option3Picture1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.option3Picture1.Image = global::Orchestrate_Project.Properties.Resources.PlayButtonPic;
+            this.option3Picture1.Location = new System.Drawing.Point(495, 28);
+            this.option3Picture1.Name = "option3Picture1";
+            this.option3Picture1.Size = new System.Drawing.Size(88, 82);
+            this.option3Picture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.option3Picture1.TabIndex = 8;
+            this.option3Picture1.TabStop = false;
+            this.option3Picture1.Visible = false;
+            // 
+            // option3Label1
+            // 
+            this.option3Label1.AutoSize = true;
+            this.option3Label1.Font = new System.Drawing.Font("Bodoni MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.option3Label1.Location = new System.Drawing.Point(7, 14);
+            this.option3Label1.Name = "option3Label1";
+            this.option3Label1.Size = new System.Drawing.Size(457, 264);
+            this.option3Label1.TabIndex = 7;
+            this.option3Label1.Text = resources.GetString("option3Label1.Text");
+            this.option3Label1.Visible = false;
+            // 
             // option2Label1
             // 
             this.option2Label1.AutoSize = true;
@@ -276,53 +323,6 @@ namespace Orchestrate_Project
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // option3Label1
-            // 
-            this.option3Label1.AutoSize = true;
-            this.option3Label1.Font = new System.Drawing.Font("Bodoni MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.option3Label1.Location = new System.Drawing.Point(7, 14);
-            this.option3Label1.Name = "option3Label1";
-            this.option3Label1.Size = new System.Drawing.Size(457, 264);
-            this.option3Label1.TabIndex = 7;
-            this.option3Label1.Text = resources.GetString("option3Label1.Text");
-            this.option3Label1.Visible = false;
-            // 
-            // option3Picture1
-            // 
-            this.option3Picture1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.option3Picture1.Image = global::Orchestrate_Project.Properties.Resources.PlayButtonPic;
-            this.option3Picture1.Location = new System.Drawing.Point(495, 28);
-            this.option3Picture1.Name = "option3Picture1";
-            this.option3Picture1.Size = new System.Drawing.Size(88, 82);
-            this.option3Picture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.option3Picture1.TabIndex = 8;
-            this.option3Picture1.TabStop = false;
-            this.option3Picture1.Visible = false;
-            // 
-            // option3Picture2
-            // 
-            this.option3Picture2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.option3Picture2.Image = global::Orchestrate_Project.Properties.Resources.UndoPic;
-            this.option3Picture2.Location = new System.Drawing.Point(495, 158);
-            this.option3Picture2.Name = "option3Picture2";
-            this.option3Picture2.Size = new System.Drawing.Size(51, 49);
-            this.option3Picture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.option3Picture2.TabIndex = 9;
-            this.option3Picture2.TabStop = false;
-            this.option3Picture2.Visible = false;
-            // 
-            // option3Picture3
-            // 
-            this.option3Picture3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.option3Picture3.Image = global::Orchestrate_Project.Properties.Resources.trashIcon;
-            this.option3Picture3.Location = new System.Drawing.Point(495, 237);
-            this.option3Picture3.Name = "option3Picture3";
-            this.option3Picture3.Size = new System.Drawing.Size(51, 44);
-            this.option3Picture3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.option3Picture3.TabIndex = 10;
-            this.option3Picture3.TabStop = false;
-            this.option3Picture3.Visible = false;
-            // 
             // HelpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,14 +345,14 @@ namespace Orchestrate_Project
             this.panel1.PerformLayout();
             this.defaultPanel.ResumeLayout(false);
             this.defaultPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.option3Picture3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.option3Picture2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.option3Picture1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option2Picture1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option1Picture2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option1Picture1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.option3Picture1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.option3Picture2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.option3Picture3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

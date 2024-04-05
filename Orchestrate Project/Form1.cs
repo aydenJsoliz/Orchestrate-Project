@@ -613,7 +613,7 @@ namespace Orchestrate_Project
 
         private void printButton_Click(object sender, EventArgs e)
         {
-
+            newMusicLineButton.Visible = false;
             PrintDialog pd = new PrintDialog();
             pd.Document = printDocument1;
 
@@ -623,6 +623,8 @@ namespace Orchestrate_Project
             {
                 printDocument1.Print(); 
             }
+
+            newMusicLineButton.Visible = true; 
 
         }
 
@@ -634,35 +636,74 @@ namespace Orchestrate_Project
 
             e.Graphics.DrawImage(musicalStaff, 0, 0);
 
+            // this is for redrawing staff lines for PDF
+            int index;
+            int count = 9;
+            int staffButtonCount = disableButtonCounter;
+            while (staffButtonCount != 0)
+            {
+                for (index = count; index < count + 5; index++)
+                {
+                    e.Graphics.DrawLine(Pens.Black, 0, index * staffHght, musicalStaffPanel.Width - 45, index * staffHght);
+                }
+                e.Graphics.DrawLine(Pens.Black, 0, (index * staffHght) - 12, 0, (index * staffHght) - 60);
+                e.Graphics.DrawLine(Pens.Black, (musicalStaffPanel.Width / 3) + 30, (index * staffHght) - 12,
+                   (musicalStaffPanel.Width / 3) + 30, (index * staffHght) - 60);
+                e.Graphics.DrawLine(Pens.Black, (musicalStaffPanel.Width / 2) + 150, (index * staffHght) - 12,
+                    (musicalStaffPanel.Width / 2) + 150, (index * staffHght) - 60);
+                e.Graphics.DrawLine(Pens.Black, musicalStaffPanel.Width - 45, (index * staffHght) - 12,
+                    musicalStaffPanel.Width - 45, (index * staffHght) - 60);
+
+                count = index + 3;
+                staffButtonCount--;
+
+                if (disableButtonCounter == 4)
+                {
+                    SolidBrush endBrush = new SolidBrush(Color.Black);
+                    e.Graphics.FillRectangle(endBrush, musicalStaffPanel.Width - 52, 396,
+                        7, 48);
+                    e.Graphics.DrawLine(Pens.Black, musicalStaffPanel.Width - 57, 443,
+                        musicalStaffPanel.Width - 57, 396);
+
+                    newMusicLineButton.BackColor = Color.LightGray;
+                    newMusicLineButton.ForeColor = Color.Gray;
+                    newMusicLineButton.Enabled = false;
+
+                    endBrush.Dispose();  // disposes graphics object for storage
+                }
+            }
+
             int i = 0;
             while (noteArray[i] != null)
             {
+                int XCoord = pointArray[i].X;
+                int YCoord = pointArray[i].Y - 2;
                 switch (rhythmArray[i])
                 {
                     case 1:
                         Bitmap quarterNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
                             Resources.NewDrawnQuarterNote), 60, 110);
-                        e.Graphics.DrawImage(quarterNote, pointArray[i]);
+                        e.Graphics.DrawImage(quarterNote, XCoord, YCoord);
                         break;
                     case 2:
                         Bitmap halfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
                             Resources.NewDrawnHalfNote), 250, 120);
-                        e.Graphics.DrawImage(halfNote, pointArray[i]);
+                        e.Graphics.DrawImage(halfNote, XCoord, YCoord);
                         break;
                     case 3:
                         Bitmap dottedHalfNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
                         Resources.DrawnDottedHalfNote), 57, 55);
-                        e.Graphics.DrawImage(dottedHalfNote, pointArray[i]);
+                        e.Graphics.DrawImage(dottedHalfNote, XCoord, YCoord);
                         break;
                     case 4:
                         Bitmap wholeNote = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
                             Resources.DrawnWholeNote), 45, 70);
-                        e.Graphics.DrawImage(wholeNote, pointArray[i]);
+                        e.Graphics.DrawImage(wholeNote, XCoord, YCoord);
                         break;
                     case 5:
                         Bitmap quarterRest = new Bitmap(new Bitmap(Orchestrate_Project.Properties.
                             Resources.DrawnQuarterRest), 45, 70);
-                        e.Graphics.DrawImage(quarterRest, pointArray[i]);
+                        e.Graphics.DrawImage(quarterRest, XCoord, YCoord);
                         break;
                     default:
                         System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
