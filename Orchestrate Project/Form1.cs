@@ -23,9 +23,6 @@ namespace Orchestrate_Project
         int counterPointArray = 0;              // counter to update Point array
         int checkForUndo = 0;                   // used to make undo function work
 
-        // Declare the PrintDocument object.
-        private System.Drawing.Printing.PrintDocument docToPrint =
-            new System.Drawing.Printing.PrintDocument();
 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();   // used to play audio
 
@@ -242,8 +239,8 @@ namespace Orchestrate_Project
                             redraw.DrawImage(quarterRest, pointArray[i]);
                             break;
                         default:
-                            System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
-                            "not been placed yet !!");
+                            System.Windows.Forms.MessageBox.Show("Notes have " +
+                            "not been placed yet !!", "ERROR !!");
                             break;
                     }
 
@@ -275,12 +272,12 @@ namespace Orchestrate_Project
             // sure that notes cannot be placed until those sections of the staff have been drawn
             if (String.Equals(rhythmResults, "nothingRadio") == true)
             {
-                System.Windows.Forms.MessageBox.Show("ERROR !! \nNote Not Selected !!");
+                System.Windows.Forms.MessageBox.Show("Note Not Selected !!", "ERROR !!");
                 return;
             }
             else if (mouseCoord.X > (musicalStaffPanel.Width - 45)) 
             {
-                System.Windows.Forms.MessageBox.Show("ERROR !! \nInvalid Note Placement !!");
+                System.Windows.Forms.MessageBox.Show("Invalid Note Placement !!", "ERROR !! !!");
                 return;
             }
             else if (String.Equals(rhythmResults, "quarterRestRadio") == true)
@@ -361,7 +358,7 @@ namespace Orchestrate_Project
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("ERROR !! \nInvalid Note Placement !!");
+                System.Windows.Forms.MessageBox.Show("Invalid Note Placement !!", "ERROR !!");
                 return;
             }
 
@@ -418,7 +415,7 @@ namespace Orchestrate_Project
                     pointArray[counterPointArray] = mouseCoord;
                     break;
                 default:
-                    System.Windows.Forms.MessageBox.Show("ERROR !! \nNote not selected !!");
+                    System.Windows.Forms.MessageBox.Show("Note not selected !!", "ERROR !!");
                     break;
 
             }
@@ -441,8 +438,8 @@ namespace Orchestrate_Project
 
             if(noteArray[i] == null)
             {
-                System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
-                        "not been placed yet !!");
+                System.Windows.Forms.MessageBox.Show("Notes have " +
+                        "not been placed yet !!", "ERROR !!");
             }
 
             while (noteArray[i] != null) 
@@ -509,8 +506,8 @@ namespace Orchestrate_Project
                         player.Stop();
                         break;
                     default:
-                        System.Windows.Forms.MessageBox.Show("ERROR !! \nNotes have " +
-                        "not been placed yet !!");
+                        System.Windows.Forms.MessageBox.Show("Notes have " +
+                        "not been placed yet !!", "ERROR !!");
                         break;
 
                 }
@@ -630,7 +627,7 @@ namespace Orchestrate_Project
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            // painting musical staff panel and all the notes for the PDF
+            // painting musical staff panel for PDF
             Bitmap musicalStaff = new Bitmap(musicalStaffPanel.Width, musicalStaffPanel.Height);
             musicalStaffPanel.DrawToBitmap(musicalStaff, new Rectangle(0, 0, musicalStaffPanel.Width, musicalStaffPanel.Height));
 
@@ -673,6 +670,7 @@ namespace Orchestrate_Project
                 }
             }
 
+            // painting all notes again for PDF
             int i = 0;
             while (noteArray[i] != null)
             {
@@ -713,8 +711,8 @@ namespace Orchestrate_Project
 
                 i++;
             }
-
-
         }
+
+
     }
 }
