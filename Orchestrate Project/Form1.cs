@@ -22,6 +22,8 @@ namespace Orchestrate_Project
         Point[] pointArray = new Point[75];     // array for storing drawn note coordinates
         int counterPointArray = 0;              // counter to update Point array
         int checkForUndo = 0;                   // used to make undo function work
+        string musicName = "Default";           // holds the name of the music sheet for printing
+        string composerName = "Composer";       // holds the name of the user for printing
 
 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();   // used to play audio
@@ -591,8 +593,8 @@ namespace Orchestrate_Project
                 noteArray[i] = null;
             }
 
-                // these functions redraw the staff lines that get erased on Refresh
-                RedrawLines();
+            // these functions redraw the staff lines that get erased on Refresh
+            RedrawLines();
 
             // resets all the array counters to start from the beginning
             counterNoteArray = 0;
@@ -611,6 +613,16 @@ namespace Orchestrate_Project
         private void printButton_Click(object sender, EventArgs e)
         {
             newMusicLineButton.Visible = false;
+
+            MusicNameForm mnf = new MusicNameForm();
+            mnf.Show();
+        }
+
+        public void GetMusicAndComposerName(string mname, string cname)
+        {
+            musicName = mname;
+            composerName = cname;
+
             PrintDialog pd = new PrintDialog();
             pd.Document = printDocument1;
 
@@ -618,11 +630,10 @@ namespace Orchestrate_Project
 
             if (result == DialogResult.OK)
             {
-                printDocument1.Print(); 
+                printDocument1.Print();
             }
 
-            newMusicLineButton.Visible = true; 
-
+            newMusicLineButton.Visible = true;
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
