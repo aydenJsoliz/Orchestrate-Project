@@ -22,6 +22,12 @@ namespace Orchestrate_Project
             this.FormClosing += new FormClosingEventHandler(MusicNameForm_FormClosing);
         }
 
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            //this.FormClosing += new FormClosingEventHandler(MusicNameForm_FormClosing);
+            this.Close();
+        }
+
         private void MusicNameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // call function
