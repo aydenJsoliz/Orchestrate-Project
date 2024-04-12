@@ -14,6 +14,7 @@ namespace Orchestrate_Project
     {
         string musicName;
         string composerName;
+        int checkforPrint;
 
         public MusicNameForm()
         {
@@ -25,6 +26,13 @@ namespace Orchestrate_Project
         private void submitButton_Click(object sender, EventArgs e)
         {
             //this.FormClosing += new FormClosingEventHandler(MusicNameForm_FormClosing);
+            checkforPrint = 1;
+            this.Close();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            checkforPrint = 0;
             this.Close();
         }
 
@@ -36,13 +44,21 @@ namespace Orchestrate_Project
 
         public string SendMusicAndComposerName()
         {
-            musicName = musicNameBox.Text;
-            composerName = composerBox.Text;
+            if (checkforPrint == 1)
+            {
+                musicName = musicNameBox.Text;
+                composerName = composerBox.Text;
 
-            // sending name of music and user back to the main form
-            var mainForm = Application.OpenForms.OfType<Form1>().Single();
-            mainForm.GetMusicAndComposerName(musicName, composerName);
-            return null;
+                // sending name of music and user back to the main form
+                var mainForm = Application.OpenForms.OfType<Form1>().Single();
+                mainForm.GetMusicAndComposerName(musicName, composerName);
+                return null;
+            }
+            else
+                return null;
+           
         }
+
+        
     }
 }

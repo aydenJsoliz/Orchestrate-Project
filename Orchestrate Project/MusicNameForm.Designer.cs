@@ -34,6 +34,7 @@ namespace Orchestrate_Project
             this.composerLabel = new System.Windows.Forms.Label();
             this.composerBox = new System.Windows.Forms.TextBox();
             this.submitButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // musicNameLabel
@@ -89,17 +90,35 @@ namespace Orchestrate_Project
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
+            // cancelButton
+            // 
+            this.cancelButton.BackColor = System.Drawing.Color.White;
+            this.cancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cancelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.Font = new System.Drawing.Font("Bodoni MT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Location = new System.Drawing.Point(335, 284);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(144, 43);
+            this.cancelButton.TabIndex = 5;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // MusicNameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(705, 339);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.composerBox);
             this.Controls.Add(this.composerLabel);
             this.Controls.Add(this.musicNameBox);
             this.Controls.Add(this.musicNameLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MusicNameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Submit Music and Composer Name";
@@ -115,5 +134,6 @@ namespace Orchestrate_Project
         private System.Windows.Forms.Label composerLabel;
         private System.Windows.Forms.TextBox composerBox;
         private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }

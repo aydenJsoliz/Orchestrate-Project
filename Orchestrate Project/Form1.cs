@@ -274,7 +274,8 @@ namespace Orchestrate_Project
             // sure that notes cannot be placed until those sections of the staff have been drawn
             if (String.Equals(rhythmResults, "nothingRadio") == true)
             {
-                System.Windows.Forms.MessageBox.Show("Note Not Selected !!", "ERROR !!");
+                System.Windows.Forms.MessageBox.Show("Note Not Selected !! \nMake sure you exit the rhythm page " +
+                    "properly if a selection was made.", "ERROR !!");
                 return;
             }
             else if (mouseCoord.X > (musicalStaffPanel.Width - 45)) 
@@ -620,8 +621,16 @@ namespace Orchestrate_Project
 
         public void GetMusicAndComposerName(string mname, string cname)
         {
-            musicName = mname;
-            composerName = cname;
+
+            // will display "Default" as the music title and "Composer" as the composer name if nothing is entered
+            if (mname.Length != 0)
+            {
+                musicName = mname;
+            }
+            if (cname.Length != 0)
+            {
+                composerName = cname;
+            }
 
             PrintDialog pd = new PrintDialog();
             pd.Document = printDocument1;
