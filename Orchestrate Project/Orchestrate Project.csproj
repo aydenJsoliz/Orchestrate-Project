@@ -215,5 +215,8 @@
   <ItemGroup>
     <None Include="Resources\DrawnDottedHalfNote.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TestingICO.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
