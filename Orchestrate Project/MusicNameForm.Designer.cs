@@ -29,6 +29,7 @@ namespace Orchestrate_Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicNameForm));
             this.musicNameLabel = new System.Windows.Forms.Label();
             this.musicNameBox = new System.Windows.Forms.TextBox();
             this.composerLabel = new System.Windows.Forms.Label();
@@ -117,6 +118,7 @@ namespace Orchestrate_Project
             this.Controls.Add(this.composerLabel);
             this.Controls.Add(this.musicNameBox);
             this.Controls.Add(this.musicNameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MusicNameForm";

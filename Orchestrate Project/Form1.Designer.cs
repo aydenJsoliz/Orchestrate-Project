@@ -248,7 +248,7 @@ namespace Orchestrate_Project
             this.notePopupButton.Name = "notePopupButton";
             this.notePopupButton.Size = new System.Drawing.Size(59, 60);
             this.notePopupButton.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.notePopupButton, "Note Selection");
+            this.toolTip1.SetToolTip(this.notePopupButton, "Rhythm Selection");
             this.notePopupButton.UseVisualStyleBackColor = true;
             this.notePopupButton.Click += new System.EventHandler(this.notePopupButton_Click);
             // 

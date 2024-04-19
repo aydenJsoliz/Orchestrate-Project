@@ -735,7 +735,5 @@ namespace Orchestrate_Project
             e.Graphics.DrawString("\"" + musicName + "\"", new Font("Bodoni MT", 30, FontStyle.Regular), Brushes.Black, new Point(50, 500));
             e.Graphics.DrawString("By: " + composerName, new Font("Bodoni MT", 16, FontStyle.Regular), Brushes.Black, new Point(50, 550));
         }
-
-
     }
 }
