@@ -265,6 +265,14 @@ namespace Orchestrate_Project
                 return;
             }
 
+            // this is to make sure there aren't more than 75 notes present. This could change later
+            if (counterNoteArray > 74)
+            {
+                System.Windows.Forms.MessageBox.Show("The max number of notes have been placed \nMake sure" +
+                    "to undo notes to make any changes.", "ERROR !!");
+                return;
+            }
+
 
             var mouseCoord = musicalStaffPanel.PointToClient(Cursor.Position);
 
@@ -517,7 +525,7 @@ namespace Orchestrate_Project
                 Thread.Sleep(sleepTime);
                 i++;
             }
-            //while (noteArray[i] != null);
+            
 
         }
         // -------------------------------------------------------------------------------------
