@@ -41,7 +41,7 @@ namespace Orchestrate_Project
             // musicNameLabel
             // 
             this.musicNameLabel.AutoSize = true;
-            this.musicNameLabel.Font = new System.Drawing.Font("Bodoni MT", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musicNameLabel.Font = new System.Drawing.Font("Bodoni MT", 25.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.musicNameLabel.Location = new System.Drawing.Point(12, 29);
             this.musicNameLabel.Name = "musicNameLabel";
             this.musicNameLabel.Size = new System.Drawing.Size(626, 50);
@@ -59,7 +59,7 @@ namespace Orchestrate_Project
             // composerLabel
             // 
             this.composerLabel.AutoSize = true;
-            this.composerLabel.Font = new System.Drawing.Font("Bodoni MT", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.composerLabel.Font = new System.Drawing.Font("Bodoni MT", 25.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.composerLabel.Location = new System.Drawing.Point(12, 165);
             this.composerLabel.Name = "composerLabel";
             this.composerLabel.Size = new System.Drawing.Size(587, 50);

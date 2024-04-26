@@ -54,9 +54,9 @@ namespace Orchestrate_Project
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Bodoni MT", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Bodoni MT", 19.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(70, 9);
+            this.label1.Location = new System.Drawing.Point(126, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(788, 51);
             this.label1.TabIndex = 0;
