@@ -49,6 +49,7 @@ namespace Orchestrate_Project
             nf.Show();
         }
 
+        // retrieves rhythm choice from NoteForm
         public void GetNoteSelection(string rhythm)
         {
             rhythmResults = rhythm;
@@ -201,6 +202,7 @@ namespace Orchestrate_Project
             DrawNotes();
         }
 
+        // this function handles all drawing of notes on mouse-click, but also for Undo 
         private void DrawNotes()
         {
             testLabel.Text = "hiiii";
@@ -744,5 +746,7 @@ namespace Orchestrate_Project
             e.Graphics.DrawString("By: " + composerName, new Font("Bodoni MT", 16, FontStyle.Regular), Brushes.Black, new Point(50, 550));
             e.Graphics.DrawString("Tempo: " + tempo, new Font("Bodoni MT", 16, FontStyle.Regular), Brushes.Black, new Point(50, 575));
         }
+
+        // -------------------------------------------------------------------------------------
     }
 }
